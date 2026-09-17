@@ -1,0 +1,201 @@
+These 15 questions cover **`if`, `else`, `elif`, comparison operators, logical operators, nested conditions, conditions with variables/lists, common mistakes, and choosing the right condition for real-world situations**.
+
+**Q1.**
+Create a variable called `age`. If the age is 18 or above, display:
+
+`You are an adult.`
+
+Otherwise, display nothing.
+
+---
+
+**Q2.**
+Create a variable called `number`.
+
+Check whether the number is **positive**. If it is positive, print:
+
+`Positive number`
+
+Test your program with both a positive and a negative number.
+
+---
+
+**Q3.**
+Create a variable called `marks`.
+
+If the marks are **50 or more**, print:
+
+`Pass`
+
+Otherwise, print:
+
+`Fail`
+
+Test your program with marks below and above 50.
+
+---
+
+**Q4.**
+Create a program that checks whether a number is:
+
+* positive
+* negative
+* zero
+
+Make sure that exactly the appropriate message is displayed for each case.
+
+---
+
+**Q5.**
+Create a program that compares two numbers stored in variables.
+
+Display whether:
+
+* the first number is greater than the second,
+* the first number is smaller than the second,
+* or both numbers are equal.
+
+---
+
+**Q6.**
+Create a program that takes a student's marks and assigns a grade:
+
+* 90 or above → `A`
+* 75–89 → `B`
+* 50–74 → `C`
+* below 50 → `F`
+
+Think carefully about the **order in which your conditions should be checked**.
+
+---
+
+**Q7.**
+You are making a simple shopping program.
+
+A customer gets free delivery if their purchase amount is **₹500 or more**.
+
+Store the purchase amount in a variable and display an appropriate message telling the customer whether they qualify for free delivery.
+
+---
+
+**Q8.**
+You are creating a simple login check.
+
+Store a username and password in variables.
+
+The user should be allowed to log in only when **both** the username and password are correct.
+
+Otherwise, display an appropriate failure message.
+
+---
+
+**Q9.**
+A cinema has different ticket prices based on age:
+
+* below 5 → Free
+* 5–17 → Child ticket
+* 18–59 → Adult ticket
+* 60 or above → Senior ticket
+
+Store the person's age in a variable and determine which ticket category they belong to.
+
+---
+
+**Q10.**
+Before running the following program, predict exactly what it will print:
+
+```python
+x = 10
+
+if x > 5:
+    print("A")
+if x > 8:
+    print("B")
+else:
+    print("C")
+```
+
+Then run it and explain **which `else` belongs to which `if`**.
+
+---
+
+**Q11.**
+Find and fix the mistake in this program:
+
+```python
+age = 18
+
+if age >= 18
+    print("Adult")
+else:
+    print("Minor")
+```
+
+After fixing it, explain why Python could not understand the original condition.
+
+---
+
+**Q12.**
+Consider this program:
+
+```python
+marks = 85
+
+if marks >= 50:
+    print("Pass")
+
+if marks >= 75:
+    print("Good")
+
+if marks >= 90:
+    print("Excellent")
+```
+
+Predict what it will print.
+
+Then think about this question:
+
+**If you wanted only one final grade/message to be printed, would this structure be appropriate? Why or why not?**
+
+---
+
+**Q13.**
+You have a list of numbers:
+
+```text
+[12, -5, 0, 8, -2, 15]
+```
+
+Use a loop and conditional statements to examine every number and count how many are:
+
+* positive
+* negative
+* zero
+
+---
+
+**Q14.**
+Create a program that takes a number from the user.
+
+Determine whether the number is:
+
+* even or odd
+* and whether it is positive, negative, or zero
+
+Your program should give the appropriate result for the number entered.
+
+---
+
+**Q15.**
+Create a small **student result checker**.
+
+The program should take a student's name and marks in three subjects.
+
+Determine whether the student passes or fails based on these rules:
+
+* The student must score at least 33 in **each subject**.
+* The average marks must be at least 40.
+
+If the student passes, display a suitable result containing their name. Otherwise, display that they failed.
+
+Decide yourself how to organize the variables and conditions.

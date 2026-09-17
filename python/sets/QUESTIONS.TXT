@@ -194,13 +194,3 @@ Your program should determine:
 * and the total number of unique students registered across both courses.
 
 Decide yourself how sets can naturally represent this situation and how you will organize the program.
-
-## Mastery Check
-
-After completing these 15 questions, you should be able to:
-
-1. Explain **what a set is** and why duplicate values are automatically removed.
-2. Create sets and perform basic operations such as **adding, removing, and membership checking**.
-3. Use the four important set operations: **union, intersection, difference, and symmetric difference**.
-4. Explain why sets are **unordered and not index-based**, and understand common set mistakes.
-5. Recognize real-world situations where **uniqueness and comparing groups of data** make sets useful.

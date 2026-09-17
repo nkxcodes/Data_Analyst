@@ -1,0 +1,195 @@
+These 15 questions cover **creating lists, indexing, slicing, changing elements, adding/removing items, useful list methods, membership, length, loops, conditions, copying/reference behavior, nested lists, and practical list manipulation**.
+
+**Q1.**
+Create a list containing the names of **five programming languages**.
+
+Print the entire list.
+
+---
+
+**Q2.**
+Create a list containing five numbers.
+
+Print:
+
+* the first number
+* the third number
+* the last number
+
+---
+
+**Q3.**
+Create a list containing the numbers from `1` to `10`.
+
+Use indexing to print the **second, fifth, and eighth** elements.
+
+---
+
+**Q4.**
+Create a list containing 10 numbers.
+
+Use slicing to create and print:
+
+* the first 5 elements
+* the last 3 elements
+* the elements from the 3rd through the 7th position
+
+---
+
+**Q5.**
+Create a list of five fruits.
+
+Then:
+
+1. Change one fruit to a different fruit.
+2. Add a new fruit to the list.
+3. Remove one fruit from the list.
+
+Print the list after each major change.
+
+---
+
+**Q6.**
+Create a list containing some repeated numbers, such as:
+
+`[10, 20, 10, 30, 40, 10, 50]`
+
+Find out:
+
+* how many elements are in the list
+* how many times `10` appears
+* the position of the first `30`
+* whether `40` exists in the list
+
+Use the appropriate list operations or built-in functions.
+
+---
+
+**Q7.**
+You are keeping track of your **Python problems solved each day**.
+
+Create a list containing the number of problems solved over several days.
+
+Then calculate the **total number of problems solved**.
+
+Think about how the list helps you store multiple related values instead of creating a separate variable for every day.
+
+---
+
+**Q8.**
+A shopping list contains several items.
+
+Create a list of items you need to buy.
+
+During shopping:
+
+* one item becomes unnecessary,
+* one new item is needed,
+* and one existing item's position in the list needs to change.
+
+Update the list accordingly and display the final shopping list.
+
+---
+
+**Q9.**
+You have a list of student marks.
+
+Go through the list and create a **new list containing only the marks that are 50 or higher**.
+
+The original list should remain unchanged.
+
+---
+
+**Q10.**
+Predict what the following program will print **before running it**:
+
+```python id="l7q2nx"
+numbers = [10, 20, 30]
+
+other = numbers
+other[0] = 100
+
+print(numbers)
+print(other)
+```
+
+Then run it.
+
+Explain why changing `other` also appears to change `numbers`.
+
+---
+
+**Q11.**
+Find and fix the mistake in this program:
+
+```python id="p3x8km"
+fruits = ["apple", "banana", "mango"]
+
+fruits[3] = "orange"
+
+print(fruits)
+```
+
+The programmer wants `orange` to become the **fourth item** in the list.
+
+After fixing it, explain why the original code causes a problem.
+
+---
+
+**Q12.**
+Predict the output of this program:
+
+```python id="v4r1ds"
+numbers = [5, 10, 15, 20, 25]
+
+print(numbers[1:4])
+print(numbers[:3])
+print(numbers[2:])
+```
+
+Then explain what each slice is selecting.
+
+After that, create your own list and test different slicing ranges.
+
+---
+
+**Q13.**
+Create a function that receives a list of numbers and returns the **largest number** in the list.
+
+Do not simply use Python's built-in function for finding the maximum. Use a loop and a variable to determine it yourself.
+
+Test your function with different lists.
+
+---
+
+**Q14.**
+Create a program that receives a list of numbers.
+
+Use a loop and conditions to create **two new lists**:
+
+* one containing the even numbers
+* one containing the odd numbers
+
+For example, if the original list contains:
+
+`[2, 7, 10, 13, 18, 21]`
+
+the two new lists should contain the appropriate numbers.
+
+---
+
+**Q15.**
+Imagine you are building a small **student marks management program**.
+
+Start with a list containing several students' marks.
+
+Your program should:
+
+* display the marks,
+* add a new student's marks,
+* remove an incorrect mark,
+* calculate the total and average,
+* count how many students passed,
+* and display the highest mark.
+
+Decide yourself how to organize the list, loops, conditions, and variables so that the program can work with different sets of marks.
