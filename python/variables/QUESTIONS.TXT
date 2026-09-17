@@ -1,0 +1,151 @@
+These 15 questions cover **creating and assigning variables, data types, reassignment, naming rules, expressions, user input, variable references, scope-like behavior at a beginner level, common mistakes, and using variables with other Python concepts**.
+
+**Q1.**
+Create three variables to store your **name, age, and city**. Print all three variables.
+
+**Q2.**
+Create variables to store two numbers. Add the two variables together and print the result.
+
+Then change the values stored in the variables and run the program again.
+
+**Q3.**
+Create a variable called `age` and store your current age in it.
+
+Then create another variable called `next_age` that represents your age next year. Print both values.
+
+**Q4.**
+Create variables containing:
+
+* an integer
+* a decimal number
+* a string
+* a boolean
+
+Print each variable and use Python to determine the **data type** of each one.
+
+**Q5.**
+Create a variable called `score` with an initial value of `50`.
+
+Then change its value to `75`, and finally change it to `100`.
+
+Print the variable after each change.
+
+What does this tell you about what happens when you **assign a new value to a variable**?
+
+**Q6.**
+Create variables for:
+
+* price of one item
+* number of items
+* discount amount
+
+Use these variables to calculate the final price.
+
+Try changing the values of the variables and make sure the calculation still works.
+
+**Q7.**
+You are creating a simple program for a student.
+
+Store the student's **name and marks in three subjects** in variables. Calculate and display:
+
+* student's name
+* total marks
+* average marks
+
+Decide yourself how the variables should be organized.
+
+**Q8.**
+A shop wants to calculate the cost of buying several identical products.
+
+Create variables for the **price of one product** and the **quantity purchased**.
+
+Calculate the total cost.
+
+Then imagine the customer buys a different quantity. Change only the appropriate variable and see what happens.
+
+**Q9.**
+Create a small program that asks the user for their **name and age**.
+
+Store the answers in variables and display a sentence such as:
+
+`Nitesh is 18 years old.`
+
+Try entering different values and observe how the variables change.
+
+**Q10.**
+Without running the program first, predict exactly what it will print:
+
+```python
+x = 10
+y = x
+x = 20
+
+print(x)
+print(y)
+```
+
+Then run it.
+
+Explain why `x` and `y` do not contain the same value at the end.
+
+**Q11.**
+Find and fix the mistake in this program:
+
+```python
+student_name = "Nitesh"
+student age = 18
+
+print(student_name)
+print(student age)
+```
+
+After fixing it, think about **why Python does not allow the original variable name**.
+
+**Q12.**
+What will the following program print?
+
+```python
+x = 5
+x = x + 10
+x = x * 2
+x = x - 5
+
+print(x)
+```
+
+Predict the answer before running it.
+
+Then explain what happens to the value stored in `x` after each line.
+
+**Q13.**
+Create a program that receives a number from the user and stores it in a variable.
+
+Then determine whether the number is:
+
+* positive
+* negative
+* or zero
+
+Use variables together with a conditional statement.
+
+**Q14.**
+Create a program that stores a list of numbers in a variable.
+
+Use a loop and other variables to calculate the **sum of all the numbers** and the **number of elements** in the list.
+
+Finally, calculate the average.
+
+**Q15.**
+Imagine you are making a very small **personal information program**.
+
+The program should store information such as:
+
+* name
+* age
+* city
+* favorite programming language
+* number of Python problems solved
+
+Then use those variables to produce a short summary about the person.
+
+You decide how to organize the variables and how to display the information. The goal is to make the program easy to modify if any information changes.
