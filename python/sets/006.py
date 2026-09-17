@@ -15,5 +15,11 @@ print(set_a.union(set_b))
 print(set_a | set_b)
 
 # ●​ elements that belong to Set A but not Set B - (-)(difference) - Start with A → remove B's elements.
+print()
 print(set_a.difference(set_b))
 print(set_a - set_b)
+
+# ●​ elements that belong to Set B but not Set A.
+print()
+print(set_b.difference(set_a))
+print(set_b - set_a)
