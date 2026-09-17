@@ -1,0 +1,180 @@
+These 15 questions cover **creating and calling functions, parameters, arguments, return values, multiple/default/keyword arguments, scope, type hints, common mistakes, and combining functions with lists, loops, and conditions**.
+
+### Q1.
+
+Create a function called `greet()` that prints:
+
+`Hello, Python!`
+
+Call the function and observe what happens.
+
+### Q2.
+
+Create a function called `show_name()` that takes a person's name as an argument and prints:
+
+`My name is <name>`
+
+Call it with at least three different names.
+
+### Q3.
+
+Create a function called `square()` that takes a number and **returns** its square.
+
+Call the function with different numbers and print the returned values.
+
+### Q4.
+
+Create a function called `add()` that takes **two numbers** and returns their sum.
+
+Test it with different pairs of numbers.
+
+Then explain the difference between the **parameters** in the function definition and the **arguments** you provide when calling it.
+
+### Q5.
+
+Create a function called `introduce()` that takes:
+
+* name
+* age
+* city
+
+It should display a short introduction using all three pieces of information.
+
+Call the function using **keyword arguments** rather than relying only on their position.
+
+### Q6.
+
+Create a function called `calculate_total()` that takes a price and quantity.
+
+Give the quantity a **default value of 1**.
+
+Test the function both:
+
+* with a quantity provided
+* without providing a quantity
+
+Observe how the default value behaves.
+
+### Q7.
+
+You are creating a small shopping program.
+
+Create a function that receives the prices of several items and calculates their total cost.
+
+Use the function in a small program where the user can provide different prices and get the total.
+
+Think about **what the function should receive and what it should return**.
+
+### Q8.
+
+A student has marks in three subjects.
+
+Create a function that receives the three marks and returns the student's **average**.
+
+Then, outside the function, use the returned average to determine whether the student passed or failed.
+
+### Q9.
+
+Create a function that receives a word and determines whether it is a **palindrome**.
+
+For example, a palindrome reads the same forwards and backwards.
+
+The function should return a Boolean value rather than directly printing the answer.
+
+### Q10.
+
+Predict what this program will do **before running it**:
+
+```python
+def calculate():
+    x = 10
+    y = 20
+    return x + y
+
+result = calculate()
+
+print(result)
+print(x)
+```
+
+Run it afterward.
+
+Explain why the first `print()` works but the second one causes a problem.
+
+### Q11.
+
+Find and fix the mistake in this function:
+
+```python
+def multiply(a, b):
+    result = a * b
+
+print(multiply(5, 4))
+```
+
+The programmer expects the output to be `20`.
+
+After fixing it, explain **why the original function did not give the expected result**.
+
+### Q12.
+
+Predict the output of this program:
+
+```python
+def change_number(number):
+    number = number + 10
+    return number
+
+x = 5
+
+change_number(x)
+
+print(x)
+```
+
+Then modify the program so that the changed value can actually be stored and used.
+
+Explain why simply calling the function does not change the value stored in `x`.
+
+### Q13.
+
+Create a function called `count_even()` that receives a list of numbers and returns how many numbers are even.
+
+For example, given:
+
+`[2, 7, 10, 13, 18, 21]`
+
+the function should return the number of even values.
+
+Use a **loop and condition inside the function**.
+
+### Q14.
+
+Create a function called `find_passed_students()` that receives:
+
+* a list of student names
+* a list of their corresponding marks
+
+Return a **new list containing the names of students who scored at least 50**.
+
+Make sure the names and marks stay correctly matched.
+
+### Q15.
+
+Build a small **student result system** using functions.
+
+The program should accept a student's:
+
+* name
+* marks in three subjects
+
+It should calculate the total and average, determine whether the student passed, and display a meaningful result.
+
+Decide yourself:
+
+* what functions you need,
+* what each function should receive,
+* what each function should return,
+* and how the functions should work together.
+
+The goal is not to make a large program, but to use functions naturally to break one problem into smaller reusable pieces.
