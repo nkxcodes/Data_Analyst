@@ -22,15 +22,15 @@ students = {
 }
 
 # whether a particular key exists.
-print("Rahul" in students)
-print("Aditya" in students)
+print('Rahul' in students)
+print('Aditya' in students)
 
 # safely retrieving a value when a key may not exist.
 # get() is used for safely retrieving a value when key may not exists.
-print(students.get("Vansh", "Student not found."))
+print(students.get('Vansh', 'Student not found.'))
 
 # remove an entry.
-result = students.pop("Rahul")
+result = students.pop('Rahul')
 
 # clearing the entire dictionary.
 students.clear()
