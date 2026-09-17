@@ -1,0 +1,206 @@
+These 15 questions cover **creating sets, uniqueness, adding/removing elements, membership, set operations, iteration, converting lists to sets, immutability of set elements, common mistakes, and practical use of sets**.
+
+**Q1.**
+Create a set containing five different programming languages.
+
+Print the entire set.
+
+Then observe whether Python displays the elements in the same order in which you wrote them.
+
+---
+
+**Q2.**
+Create a set containing these numbers:
+
+`10, 20, 30, 40, 50`
+
+Check whether `30` exists in the set.
+
+Then check whether `100` exists.
+
+---
+
+**Q3.**
+Create a set containing some repeated numbers, for example:
+
+`10, 20, 10, 30, 20, 40, 10`
+
+Print the set.
+
+Observe what happens to the duplicate values.
+
+---
+
+**Q4.**
+Create an empty set.
+
+Then add three numbers to it one at a time.
+
+After that, remove one of the numbers and print the final set.
+
+---
+
+**Q5.**
+Create two sets:
+
+* Set A: numbers from `1` to `5`
+* Set B: numbers from `4` to `8`
+
+Find the elements that are present in **both sets**.
+
+---
+
+**Q6.**
+Using the same two sets from Q5, find:
+
+* all elements that belong to either set,
+* elements that belong to Set A but not Set B,
+* elements that belong to Set B but not Set A.
+
+Think about how these operations are different from simply checking membership.
+
+---
+
+**Q7.**
+Two students attended different days of a Python class.
+
+Student A attended:
+
+`Monday, Tuesday, Wednesday, Friday`
+
+Student B attended:
+
+`Tuesday, Wednesday, Thursday, Friday`
+
+Use sets to determine:
+
+* which days both students attended,
+* which days only Student A attended,
+* which days only Student B attended.
+
+---
+
+**Q8.**
+You receive a list of numbers containing many duplicates.
+
+For example:
+
+`[10, 20, 10, 30, 40, 20, 50, 30]`
+
+Create a new collection containing only the **unique numbers**.
+
+The original list should remain unchanged.
+
+---
+
+**Q9.**
+A website has a list of visitors who logged in today.
+
+Some usernames appear multiple times because users logged in more than once.
+
+Create a program that determines:
+
+* how many **unique users** visited,
+* whether a particular username visited,
+* and the names of all unique users.
+
+---
+
+**Q10.**
+Predict what happens before running this:
+
+```python id="s7k2pd"
+numbers = {10, 20, 30}
+
+numbers[0] = 100
+
+print(numbers)
+```
+
+Run it afterward.
+
+Explain why you cannot access or change a set using an index like you can with a list.
+
+---
+
+**Q11.**
+Find and fix the mistake in this program:
+
+```python id="q4m8vx"
+numbers = {}
+
+numbers.add(10)
+numbers.add(20)
+
+print(numbers)
+```
+
+The programmer wants `numbers` to be an empty set and then add values to it.
+
+After fixing it, explain why the original `{}` does not create an empty set.
+
+---
+
+**Q12.**
+Predict the result of each operation before running the program:
+
+```python id="d8n2kf"
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+print(A | B)
+print(A & B)
+print(A - B)
+print(A ^ B)
+```
+
+Then explain in your own words what each of the four operations represents.
+
+---
+
+**Q13.**
+Create a function that receives a list of numbers and returns the number of **unique values** in that list.
+
+Test it with lists containing:
+
+* no duplicates,
+* some duplicates,
+* all identical values.
+
+---
+
+**Q14.**
+You have two lists of student names:
+
+* students who submitted an assignment
+* students who attended the class
+
+Use sets to find the students who **attended but did not submit** the assignment.
+
+Display their names.
+
+---
+
+**Q15.**
+Imagine you are building a small **course registration system**.
+
+There are two courses, each containing a collection of registered students.
+
+Your program should determine:
+
+* students registered in both courses,
+* students registered only in the first course,
+* students registered only in the second course,
+* and the total number of unique students registered across both courses.
+
+Decide yourself how sets can naturally represent this situation and how you will organize the program.
+
+## Mastery Check
+
+After completing these 15 questions, you should be able to:
+
+1. Explain **what a set is** and why duplicate values are automatically removed.
+2. Create sets and perform basic operations such as **adding, removing, and membership checking**.
+3. Use the four important set operations: **union, intersection, difference, and symmetric difference**.
+4. Explain why sets are **unordered and not index-based**, and understand common set mistakes.
+5. Recognize real-world situations where **uniqueness and comparing groups of data** make sets useful.
