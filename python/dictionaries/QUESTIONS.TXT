@@ -1,0 +1,201 @@
+These 15 questions cover **creating dictionaries, keys and values, accessing and updating data, adding/removing entries, useful dictionary methods, membership, iteration, nested data, common mistakes, and practical problem-solving with dictionaries**.
+
+**Q1.**
+Create a dictionary containing information about yourself:
+
+* name
+* age
+* city
+
+Print the entire dictionary.
+
+---
+
+**Q2.**
+Using the dictionary from Q1, access and print the value stored under each key individually.
+
+---
+
+**Q3.**
+Create a dictionary containing the names of three students and their marks.
+
+Print the mark of one particular student by using their name.
+
+Then try accessing another student by changing the key.
+
+---
+
+**Q4.**
+Create a dictionary representing a product with:
+
+* name
+* price
+* quantity
+
+Then:
+
+1. Change the price.
+2. Change the quantity.
+3. Add a new key containing the product's category.
+
+Print the final dictionary.
+
+---
+
+**Q5.**
+Create a dictionary containing five students and their marks.
+
+Find and display:
+
+* all the student names,
+* all the marks,
+* the number of students.
+
+Use appropriate dictionary operations/methods rather than manually writing each value.
+
+---
+
+**Q6.**
+Create a dictionary containing several key-value pairs.
+
+Practice:
+
+* checking whether a particular **key** exists,
+* safely retrieving a value when a key may not exist,
+* removing an entry,
+* clearing the entire dictionary.
+
+Do these operations separately so you can observe what each one does.
+
+---
+
+**Q7.**
+You are building a simple **phone book**.
+
+Store several people's names and phone numbers in a dictionary.
+
+Allow the program to look up a person's phone number when their name is provided.
+
+Also handle the situation where the requested person is not in the phone book.
+
+---
+
+**Q8.**
+A shop has a dictionary containing products and their prices.
+
+A customer gives you the name of a product.
+
+Use the dictionary to determine whether the product exists and, if it does, display its price.
+
+Think about how a dictionary makes this lookup easier than searching through a list manually.
+
+---
+
+**Q9.**
+You have a sentence such as:
+
+`"python is easy and python is powerful"`
+
+Create a dictionary that counts how many times **each word** appears in the sentence.
+
+For this question, think about how the dictionary can keep track of information that changes as you process each word.
+
+---
+
+**Q10.**
+Predict what the following program will print **before running it**:
+
+```python id="k4m8ps"
+student = {
+    "name": "Nitesh",
+    "age": 18
+}
+
+student["age"] = 19
+student["city"] = "Delhi"
+
+print(student)
+```
+
+Then explain why `"age"` changes while `"city"` is added.
+
+---
+
+**Q11.**
+Find and fix the mistake in this program:
+
+```python id="r2v7nx"
+student = {
+    "name": "Nitesh",
+    "marks": 85
+}
+
+print(student["grade"])
+```
+
+The programmer wants to display the student's grade, but the dictionary does not contain that information.
+
+Fix the program so it handles this situation safely.
+
+---
+
+**Q12.**
+Consider this dictionary:
+
+```python id="t8q3jd"
+data = {
+    "name": "Nitesh",
+    "age": 18,
+    "marks": [80, 75, 90]
+}
+```
+
+Answer these questions by working with the dictionary:
+
+1. How would you access the list of marks?
+2. How would you access the first mark inside that list?
+3. How would you change the second mark to `85`?
+
+This question is about understanding how **different Python data structures can exist inside a dictionary**.
+
+---
+
+**Q13.**
+Create a function that receives a dictionary containing student names and marks.
+
+The function should return the number of students who scored **50 or higher**.
+
+Use a loop and a condition inside the function.
+
+---
+
+**Q14.**
+You have a list of words:
+
+`["apple", "banana", "apple", "orange", "banana", "apple"]`
+
+Create a dictionary that stores each word as a key and its number of occurrences as the value.
+
+Use a loop to build the dictionary rather than manually creating it.
+
+---
+
+**Q15.**
+Create a small **student record system** using a dictionary.
+
+Each student should have information such as:
+
+* name
+* age
+* marks
+* city
+
+Your program should allow you to:
+
+* add a student,
+* update a student's marks,
+* look up a student's information,
+* determine whether the student passed,
+* and display the stored student records.
+
+Decide yourself how the dictionary should be structured so that these operations are simple to perform.
