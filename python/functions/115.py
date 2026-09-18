@@ -15,9 +15,6 @@ The goal is not to make a large program, but to use functions naturally to break
 into smaller reusable pieces.
 """
 
-import math
-
-
 def calculate_total_and_average(name, sub_1, sub_2, sub_3):
     is_passed = True
     if sub_1 < 33 or sub_2 < 33 or sub_3 < 33:
