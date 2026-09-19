@@ -1,0 +1,12 @@
+"""
+Q1. — Easy
+You have:
+numbers = [1, 2, 3, 4, 5]
+Use map() to create a new result where every number is doubled.
+"""
+
+numbers = [1, 2, 3, 4, 5]
+
+result = map(lambda x: x * x, numbers)
+
+print(list(result))
