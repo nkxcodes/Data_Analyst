@@ -13,3 +13,27 @@ Use the standard library modules you have learned where they naturally fit.
 You do not need to use every module from this topic. Decide yourself which ones are
 actually useful for each part.
 """
+
+import time, csv, json, os, shutil
+
+start = time.time()
+
+passing_students = []
+
+with open('students.csv', 'r') as file:
+    reader = csv.reader(file)
+
+    for row in reader:
+        marks = int(row[1])
+        if marks >= 75:
+            passing_students.append(row)
+
+with open('students.json', 'w') as file:
+    json.dump(passing_students, file)
+
+os.mkdir('backup')
+
+shutil.copy('students.csv', 'backup/')
+
+end = time.time()
+print(f'Time taken: {end - start}')
