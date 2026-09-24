@@ -1,0 +1,7 @@
+Python is easy to learn.
+I am studying Pandas.
+Python is used in data analysis.
+Linux is a powerful operating system.
+I practice Python every day.
+SQL is used to work with databases.
+Python has many useful libraries.
