@@ -10,3 +10,16 @@ Create a program that:
 4.​ Writes those even numbers into a new file called even_numbers.txt.
 Use file operations, lists, loops, and conditions.
 """
+
+with open('numbers.txt', 'r') as file:
+    content = file.read()
+    content = content.split()
+    numbers = []
+
+    for value in content:
+        numbers.append(int(value))
+
+    with open('even_numbers.txt', 'w') as file:
+        for num in numbers:
+            if num % 2 == 0:
+                file.write(f'{num}\n')
