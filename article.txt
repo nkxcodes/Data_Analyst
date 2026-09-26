@@ -1,0 +1,5 @@
+Python is a popular programming language.
+Python is easy to learn and easy to read.
+Many students use Python to learn programming.
+I am learning Python every day.
+Python can also be used for data analysis.
