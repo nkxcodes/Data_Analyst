@@ -12,4 +12,4 @@ folder = Path('documents')
 # .iterdir() function is use to see inside a folder.
 for file in folder .iterdir():
     if file.suffix == '.txt':
-        print(file)
+        print(file.name)
