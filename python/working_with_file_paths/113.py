@@ -14,3 +14,19 @@ Combine paths, file operations, loops, lists, and numbers.
 from pathlib import Path
 
 base_folder = Path('numbers')
+
+total = 0
+for file in base_folder.iterdir():
+    with open(f'{file}', 'r') as opened_file:
+        content = opened_file.read()
+        content = content.split()
+        numbers = []
+
+        for number in content:
+            numbers.append(int(number))
+
+        for number in numbers:
+            total += number
+
+        print(f'{file.name}: {total}')
+        total = 0
