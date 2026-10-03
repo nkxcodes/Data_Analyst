@@ -12,3 +12,21 @@ learned.
 The goal is not to make a huge program—it should simply demonstrate that you understand
 how paths help Python work with real files and folders.
 """
+
+from pathlib import Path
+
+base_folder = Path('downloads')
+images_folder = base_folder / 'Images'
+documents_folder = base_folder / 'Documents'
+data_folder = base_folder / 'Data'
+
+for file in base_folder.iterdir():
+    if file.suffix in ('.png', '.jpg', '.jpeg'):
+        images_folder.mkdir(exist_ok=True)
+        file.rename(images_folder / file.name)
+    elif file.suffix in ('.pdf', '.txt', '.docx'):
+        documents_folder.mkdir(exist_ok=True)
+        file.rename(documents_folder / file.name)
+    elif file.suffix in ('.csv', '.json'):
+        data_folder.mkdir(exist_ok=True)
+        file.rename(data_folder / file.name)
