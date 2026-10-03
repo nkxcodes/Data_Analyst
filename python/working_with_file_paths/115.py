@@ -15,7 +15,7 @@ how paths help Python work with real files and folders.
 
 from pathlib import Path
 
-base_folder = Path('downloads')
+base_folder = Path('python/downloads')
 images_folder = base_folder / 'Images'
 documents_folder = base_folder / 'Documents'
 data_folder = base_folder / 'Data'
