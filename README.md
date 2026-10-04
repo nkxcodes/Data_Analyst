@@ -1,14 +1,14 @@
 # Data Analyst
 
-This repository contains my learning, practice, and projects of Data Analysis.
+A repository where I practice and build my understanding of Data Analysis step by step.
 
-I am building my skills step by step, focusing on understanding the fundamentals and solving problems rather than just following tutorials.
+This includes Python practice, data analysis exercises, problem-solving, and projects that I build while learning.
 
 ## What I'm Learning
 
 * Python
-* Pandas
 * NumPy
+* Pandas
 * SQL
 * Data Cleaning
 * Data Analysis
@@ -21,66 +21,48 @@ I am building my skills step by step, focusing on understanding the fundamentals
 Data_Analyst/
 │
 ├── python/
-│   ├── basics/
-│   ├── working_with_files/
-│   └── ...
+│   └── Python practice and exercises
 │
-├── pandas/
-│   ├── basic_dataframe/
-│   └── ...
+├── data_analysis_with_python/
+│   └── Data analysis practice and exercises
 │
-├── numpy/
-│   └── ...
-│
-├── sql/
-│   └── ...
-│
-└── projects/
-    └── ...
+├── requirements.txt
+└── README.md
 ```
 
-The structure may change as I learn new topics and build more projects.
+The structure will grow as I learn and add new topics and projects.
 
-## My Learning Approach
+## How I Learn
 
-I try to learn each topic properly before moving to the next one.
+I try to understand a topic before moving to the next one.
 
-For each topic, I practice by:
+My usual process is:
 
-1. Understanding the basic concept
-2. Solving small problems
-3. Applying the concept to practical situations
-4. Building small projects
-5. Reviewing and improving my previous work
+1. Learn the concept
+2. Practice with small problems
+3. Apply it to data
+4. Build something with it
+5. Review what I learned
 
 ## Current Focus
 
-Currently, I am strengthening my Python, NumPy, Pandas, and SQL fundamentals and gradually applying them to data-analysis problems.
+My current focus is strengthening my Python fundamentals and learning how to use Python for data analysis.
 
-## Practice
+I am gradually working with NumPy, Pandas, SQL, and other tools used in data analysis.
 
-I regularly solve programming and data-analysis questions to improve my problem-solving skills.
+## Practice & Projects
 
-The repository includes my practice solutions, experiments, and small exercises from different topics.
+This repository contains my practice solutions, experiments, and projects.
 
-## Projects
-
-As I progress, I will add practical projects that combine the skills I have learned.
-
-Some projects may start simple and become more advanced as I improve.
-
-## Why This Repository?
-
-This repository is mainly a place for me to keep my work organized and see my progress over time.
-
-It also allows others to look at how I approach problems and how my projects improve as I learn more.
+Some work may be simple because I am still learning. The goal is to improve the quality and complexity of my work over time.
 
 ## Progress
 
-I am still learning, so this repository will continue to change.
+This is an ongoing learning repository.
 
-New topics, practice problems, and projects will be added as I progress.
+I will keep adding new concepts, practice problems, and projects as I learn.
 
 ---
 
-**Learning step by step. Building one thing at a time.**
+Learning step by step. Building one thing at a time.
+
