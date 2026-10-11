@@ -31,3 +31,8 @@ SELECT * FROM students;
 -- Q2. Write a SQL query to retrieve only the name column from the students table.
 
 SELECT name FROM students;
+
+/*Q3. You want to display students' names and marks together, without displaying their other
+information. Write the SQL query.*/
+
+SELECT name, marks FROM students;
