@@ -69,3 +69,10 @@ and marks.
 */
 
 SELECT name, marks FROM students WHERE marks > 80;
+
+/*
+Q8. A school administrator wants a list of students who are 17 years old and live in Delhi.
+Display their names, ages, and cities.
+*/
+
+SELECT name, age, city FROM students WHERE age = 17 AND city = 'Delhi';
