@@ -60,3 +60,12 @@ repeating a city that appears multiple times.
 */
 
 SELECT DISTINCT city FROM students;
+
+/*
+Questions 7–9: Practical application
+Difficulty: Application
+Q7. A teacher wants to find students who scored more than 80 marks. Display only their names
+and marks.
+*/
+
+SELECT name, marks FROM students WHERE marks > 80;
