@@ -76,3 +76,10 @@ Display their names, ages, and cities.
 */
 
 SELECT name, age, city FROM students WHERE age = 17 AND city = 'Delhi';
+
+/*
+Q9. A teacher wants to review students whose marks are between 60 and 90, including both 60
+and 90. Display their names and marks.
+*/
+
+SELECT name, marks FROM students WHERE marks BETWEEN 60 AND 90;
