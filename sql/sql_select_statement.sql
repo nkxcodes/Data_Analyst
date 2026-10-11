@@ -36,3 +36,27 @@ SELECT name FROM students;
 information. Write the SQL query.*/
 
 SELECT name, marks FROM students;
+
+/*
+Questions 4–6: Core concepts
+Difficulty: Medium
+Q4. Write a query to display the name, age, and city columns in that exact order. Does the
+order of columns in your SELECT statement matter?
+*/
+
+SELECT name, age, city FROM students;
+
+/*
+Q5. The school wants to display each student's name and marks, but the marks column should
+appear under the heading score in the query result. Write the query without changing the
+actual table structure.
+*/
+
+SELECT name, marks AS score FROM students;
+
+/*
+Q6. Write a query that displays only the different cities present in the students table, without
+repeating a city that appears multiple times.
+*/
+
+SELECT DISTINCT city FROM students;
