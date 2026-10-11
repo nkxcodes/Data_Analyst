@@ -27,3 +27,7 @@ Q1. Write a SQL query to retrieve all columns and all rows from the students tab
 */
 
 SELECT * FROM students;
+
+-- Q2. Write a SQL query to retrieve only the name column from the students table.
+
+SELECT name FROM students;
