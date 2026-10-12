@@ -95,3 +95,17 @@ SELECT name FROM students;
 1. Give all columns from the table students.
 2. Give only the name column from the table students.
 */
+
+/*
+Q11. Find the mistake.
+A beginner writes this query to retrieve the names and marks of students who scored above 80:
+SELECT name, marks
+FROM students
+WHERE marks > 80
+The beginner says the query is incorrect because it does not end with a semicolon. Is the
+beginner necessarily correct? Explain when the semicolon matters.
+
+Answer:-
+Yes, the beginner is correct that query is incorrect,
+a query in sql should must end with and semicolon(;)
+*/
