@@ -109,3 +109,22 @@ Answer:-
 Yes, the beginner is correct that query is incorrect,
 a query in sql should must end with and semicolon(;)
 */
+
+/*
+Q12. Consider this query:
+SELECT name, age
+FROM students;
+A beginner wants to display every column but writes:
+SELECT name, age, *
+FROM students;
+Is this a good way to retrieve every column? Explain what is problematic about this approach
+and how you would write the query correctly.
+
+Answer:
+It is not a good way of retrieving every column,
+because it will give name, age and then every column,
+so we will get name and age twice.
+
+better:-
+SELECT * FROM students;
+*/
