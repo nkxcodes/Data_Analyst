@@ -155,3 +155,17 @@ SELECT DISTINCT marks FROM students WHERE city = 'Delhi';
 
 -- Q14
 SELECT DISTINCT city FROM students WHERE age < 16 OR marks > 90;
+
+/*
+Question 15: Mastery challenge
+Difficulty: Challenge
+Q15. Student Data Analysis
+A school administrator wants to analyze the student database and generate a report containing
+the unique combinations of student age and city for students who meet these requirements:
+●​ They scored at least 75 marks.
+●​ They live in Delhi or Mumbai.
+●​ Each identical age-and-city combination should appear only once.
+Write a single SQL query that produces this report.
+*/
+
+SELECT DISTINCT age, city FROM students WHERE (city = 'Delhi' OR city = 'Mumbai') AND marks >= 75;
