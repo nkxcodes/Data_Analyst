@@ -149,3 +149,23 @@ Think carefully about how you combine the city conditions with the marks conditi
 */
 
 SELECT name, city, marks FROM students WHERE (city = 'Delhi' OR city = 'Mumbai') AND marks >= 70;
+
+/*
+Question 15: Mastery challenge
+Difficulty: Challenge
+Q15. Student Report
+A school wants a simple report from its students table. The report must:
+●​
+●​
+●​
+●​
+●​
+Display each student's name, city, and marks.
+Include only students who scored at least 75 marks.
+Include students who live in Delhi or Mumbai.
+Show the marks column under the heading final_score.
+Display each qualifying student only once.
+Write a single SQL query that produces the requested report.
+*/
+
+SELECT DISTINCT name, city, marks AS final_score FROM students WHERE (city = 'Delhi' OR city = 'Mumbai') AND marks >= 75;
