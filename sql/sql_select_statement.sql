@@ -128,3 +128,16 @@ so we will get name and age twice.
 better:-
 SELECT * FROM students;
 */
+
+/*
+Questions 13–14: Mixed problems
+Difficulty: Mixed
+Q13. You are given a Python variable:
+minimum_marks = 75
+Write a SQL query that displays the names and marks of students whose marks are greater
+than the value stored in minimum_marks.
+Assume you are writing an ordinary SQL query, not Python code that automatically substitutes
+the variable.
+*/
+
+SELECT name, marks FROM students WHERE marks > 75;
