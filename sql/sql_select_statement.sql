@@ -141,3 +141,11 @@ the variable.
 */
 
 SELECT name, marks FROM students WHERE marks > 75;
+
+/*
+Q14. You want to display the names of students who live in either Delhi or Mumbai and have
+scored at least 70 marks. Display their names, cities, and marks.
+Think carefully about how you combine the city conditions with the marks condition.
+*/
+
+SELECT name, city, marks FROM students WHERE (city = 'Delhi' OR city = 'Mumbai') AND marks >= 70;
