@@ -43,3 +43,29 @@ SELECT DISTINCT age FROM students;
 
 -- Q3
 SELECT DISTINCT gender FROM students;
+
+/*
+Questions 4–6: Core concepts
+Difficulty: Medium
+Q4. Write a query to display all the unique marks obtained by students. If multiple students have
+the same marks, each marks value should appear only once.
+Q5. The school wants to know which different combinations of city and gender exist in its
+student records. Write a query that displays these combinations without repeating identical
+pairs.
+Q6. A beginner thinks that selecting distinct city and gender means both columns will
+independently contain unique values. Is this understanding correct? Explain what SQL
+considers a duplicate when DISTINCT is applied to both columns together.
+*/
+
+-- Q4
+SELECT DISTINCT marks FROM students;
+
+-- Q5
+SELECT DISTINCT city, gender FROM students;
+
+-- Q6
+/*
+When DISTINCT is applied to multiple columns, SQL
+considers the entire combination of those columns
+when identifying duplicates.
+*/
