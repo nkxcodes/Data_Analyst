@@ -69,3 +69,27 @@ When DISTINCT is applied to multiple columns, SQL
 considers the entire combination of those columns
 when identifying duplicates.
 */
+
+/*
+Questions 7–9: Practical application
+Difficulty: Application
+
+Q7. A school administrator wants to know which different cities have students aged 17. Display
+each qualifying city only once.
+
+Q8. A teacher wants to see the different marks obtained by students who live in Delhi. The
+same marks should not appear repeatedly in the result.
+
+Q9. A school wants to identify all the different combinations of age and city among students
+who scored more than 80 marks. Construct a query that returns only unique combinations for
+qualifying students.
+*/
+
+-- Q7
+SELECT DISTINCT city FROM students WHERE age = 17;
+
+-- Q8
+SELECT DISTINCT marks FROM students WHERE city = 'Delhi';
+
+-- Q9
+SELECT DISTINCT age, city FROM students WHERE marks > 80;
