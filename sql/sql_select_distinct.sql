@@ -93,3 +93,44 @@ SELECT DISTINCT marks FROM students WHERE city = 'Delhi';
 
 -- Q9
 SELECT DISTINCT age, city FROM students WHERE marks > 80;
+
+/*
+Questions 10–12: Deeper understanding
+Difficulty: Tricky
+Q10. Predict the result.
+Consider the following records:
+city
+Delhi
+Mumbai
+Delhi
+Jaipur
+Mumbai
+What values would be returned by a query selecting distinct cities? Would the number of
+returned rows necessarily equal the number of rows in the original table? Explain.
+Q11. Find the mistake.
+A beginner wants to display every unique city but writes:
+SELECT city DISTINCT
+FROM students;
+Identify the syntax mistake and rewrite the query correctly.
+Q12. Understand the difference.
+Consider these two queries:
+SELECT DISTINCT city
+FROM students;
+SELECT DISTINCT city, age
+FROM students;
+Can the second query return more rows than the first? Explain why, even though both queries
+use DISTINCT.
+*/
+
+-- Q10
+/*
+Delhi
+Mumbai
+Jaipur
+*/
+
+-- Q11
+SELECT DISTINCT city FROM students;
+
+-- Q12
+-- Query seconds retuns more rows than the first because, it returns are unique combinations.
