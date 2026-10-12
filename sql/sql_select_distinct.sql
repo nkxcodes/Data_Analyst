@@ -134,3 +134,24 @@ SELECT DISTINCT city FROM students;
 
 -- Q12
 -- Query seconds retuns more rows than the first because, it returns are unique combinations.
+
+/*
+Questions 13–14: Mixed problems
+Difficulty: Mixed
+Q13. A Python variable stores a city name:
+selected_city = "Delhi"
+Write a SQL query to retrieve the different marks obtained by students from the city stored in
+selected_city.
+Assume you are writing a normal SQL query and must use the literal city value in the query,
+rather than automatically substituting the Python variable.
+Q14. A school wants to know which different cities have students who are either younger than
+16 or have scored more than 90 marks. Display each qualifying city only once.
+Construct a query that correctly combines both conditions without accidentally excluding
+qualifying students.
+*/
+
+-- Q13
+SELECT DISTINCT marks FROM students WHERE city = 'Delhi';
+
+-- Q14
+SELECT DISTINCT city FROM students WHERE age < 16 OR marks > 90;
