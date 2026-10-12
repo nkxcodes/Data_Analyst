@@ -83,3 +83,15 @@ and 90. Display their names and marks.
 */
 
 SELECT name, marks FROM students WHERE marks BETWEEN 60 AND 90;
+
+/*
+Questions 10–12: Deeper understanding
+Difficulty: Tricky
+Q10. Predict what each query will return. Explain the difference between the results.
+SELECT * FROM students;
+SELECT name FROM students;
+*/
+/*
+1. Give all columns from the table students.
+2. Give only the name column from the table students.
+*/
