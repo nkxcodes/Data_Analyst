@@ -48,3 +48,27 @@ CREATE TEMPORARY TABLE student_backup(
 
 -- Q3
 SELECT * FROM high_scorers;
+
+/*
+Questions 4–6: Core concepts
+Difficulty: Medium
+Q4. You want to create a temporary table named delhi_students containing the id, name,
+age, and marks of students who live in Delhi. Create the temporary table using data from the
+existing students table.
+Q5. A temporary table named student_results already exists with columns name and
+marks. Write a query to insert a new student's name and marks into it.
+Q6. You want to remove all rows from a temporary table named student_results while
+keeping the table itself available for further use. What SQL statement would you use?
+*/
+
+-- Q4
+CREATE TEMPORARY TABLE delhi_students AS
+SELECT id, name, age, marks
+FROM students
+WHERE city = 'Delhi';
+
+-- Q5
+INSERT INTO student_results VALUES ('Manav', 45);
+
+-- Q6
+DELETE FROM students_results;
