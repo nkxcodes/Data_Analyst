@@ -57,3 +57,23 @@ SELECT name, city FROM students WHERE city = 'Delhi' OR city = 'Mumbai';
 
 -- Q6
 SELECT name, marks FROM students WHERE marks != 50;
+
+/*
+Questions 7–9: Practical application
+Difficulty: Application
+Q7. A teacher wants to identify students who need academic support. The school's rule is that
+students scoring below 40 marks require support. Display their names, cities, and marks.
+Q8. A school wants to identify students whose names begin with the letter A, regardless of what
+comes after that letter. Display their names.
+Q9. The administrator wants to find students whose marks fall within the range of 60 to 85,
+including both boundaries, and who live in Jaipur. Display their names, marks, and cities.
+*/
+
+-- Q7
+SELECT name, city, marks FROM students WHERE marks < 40;
+
+-- Q8
+SELECT name FROM students WHERE name LIKE 'A%';
+
+-- Q9
+SELECT name, marks, city FROM students WHERE city = 'Jaipur' AND marks BETWEEN 60 AND 85;
