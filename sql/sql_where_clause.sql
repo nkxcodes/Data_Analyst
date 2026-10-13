@@ -37,3 +37,23 @@ SELECT name FROM students WHERE city = 'Delhi';
 
 -- Q3
 SELECT name, age FROM students WHERE age = 17;
+
+/*
+Questions 4–6: Core concepts
+Difficulty: Medium
+Q4. Retrieve the names and marks of students who scored at least 75 marks but fewer than 90
+marks. Both conditions must be satisfied.
+Q5. A school administrator wants to retrieve students who live in either Delhi or Mumbai. Write a
+query that returns their names and cities.
+Q6. Retrieve the names and marks of students whose marks are not equal to 50. Make sure
+you use a valid SQL comparison operator.
+*/
+
+-- Q4
+SELECT name, marks FROM students WHERE marks >= 75 AND marks < 90;
+
+-- Q5
+SELECT name, city FROM students WHERE city = 'Delhi' OR city = 'Mumbai';
+
+-- Q6
+SELECT name, marks FROM students WHERE marks != 50;
