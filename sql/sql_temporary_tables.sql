@@ -167,3 +167,33 @@ table is removed or the session ends. This behavios must be
 handles carefully because queries may retrieve data from the
 temporary table instead of the regular table.
 */
+
+/*
+Questions 13–14: Mixed problems
+Difficulty: Mixed
+Q13. You are analyzing students whose marks meet a minimum threshold. A Python variable
+stores the threshold:
+minimum_marks = 80
+Write a MySQL query that creates a temporary table named qualified_students containing
+the id, name, and marks of students who meet the threshold.
+Assume you're writing a normal SQL query, so use the threshold value directly in the SQL
+statement.
+Q14. A temporary table named monthly_sales contains product_name, quantity, and
+unit_price. You need to generate a report that calculates total revenue for each product and
+displays only products whose total revenue exceeds ₹10,000.
+Write a query that use
+*/
+
+-- Q13
+CREATE TEMPORARY TABLE qualified_students AS
+SELECT id, name, marks
+FROM students
+WHERE >= 80;
+
+-- Q14
+SELECT product_name,
+       SUM(quantity * unit_price) AS total_revenue
+FROM monthly_sales
+GROUP BY product_name
+HAVING SUM(quantity * unit_price) >  10000;
+
