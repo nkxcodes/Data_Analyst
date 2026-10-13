@@ -106,3 +106,64 @@ SELECT AVG(marks) FROM students_from_delhi;
 CREATE TEMPORARY TABLE student_02 AS
 SELECT name, city, marks
 FROM students;
+
+/*
+Questions 10–12: Deeper understanding
+Difficulty: Tricky
+Q10. Predict the behavior.
+You create a temporary table named test_results in your current MySQL session, insert
+three rows, and query it successfully.
+What do you expect to happen to this temporary table when:
+●​ You execute another query in the same session.
+●​ You close the database connection and open a new session.
+Explain why.
+Q11. Find the mistake.
+A beginner executes the following statements in MySQL:
+CREATE TEMPORARY TABLE high_scorers (
+name VARCHAR(100),
+marks INT
+);
+CREATE TEMPORARY TABLE high_scorers (
+name VARCHAR(100),
+marks INT
+);
+The second statement produces an error. Explain why this happens and how the beginner could
+handle the situation if the table might already exist.
+Q12. Understand table names and scope.
+A regular table named students already exists in a database. During the same session, you
+create a temporary table that is also named students.
+Explain which table MySQL uses when you refer to students in a query during that session.
+What happens to the regular table itself, and why should this behavior be handled carefully?
+*/
+
+-- Q10
+/*
+1. The query will be successfully executed because we are
+in the same session where the temporary table is been
+created.
+2. And after closing the database and opening a new session,
+the queries for that temporary table will not work, because
+that session is already ended in which that temporary table
+is been created.
+*/
+
+-- Q11
+/*
+A second CREATE TEMPORARY TABLE statement produces an
+error because a temporary table with the same name
+already exists in the current session. We can use
+CREATE TEMPORARY TABLE IF NOT EXISTS to avoid the error,
+or drop the existing table using DROP TEMPORARY TABLE 
+IF EXISTS before creating it again.
+*/
+
+-- Q12
+/*
+A temporary table takes precendence over a regular table with the
+same name in MySQL. During that session, queries using the
+shared access the temporary table. The regular table remains
+unchanges and becomes accessible again after the temporary
+table is removed or the session ends. This behavios must be
+handles carefully because queries may retrieve data from the
+temporary table instead of the regular table.
+*/
