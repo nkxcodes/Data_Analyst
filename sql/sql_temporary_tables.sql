@@ -72,3 +72,37 @@ INSERT INTO student_results VALUES ('Manav', 45);
 
 -- Q6
 DELETE FROM students_results;
+
+/*
+Questions 7–9: Practical application
+Difficulty: Application
+Q7. A teacher wants to analyze students who scored at least 75 marks without repeatedly
+filtering the original students table. Create a temporary table containing the qualifying
+students' IDs, names, and marks.
+Q8. A school administrator wants to calculate the average marks of students from Delhi. The
+administrator first wants to store the relevant student records in a temporary table and then
+calculate the average from that table. Write the SQL statements needed for both steps.
+Q9. You need to compare students' marks with their cities across several analysis queries.
+Instead of repeatedly selecting the same columns from the original table, prepare a temporary
+table containing only name, city, and marks. Choose an appropriate way to create and
+populate it.
+*/
+
+-- Q7
+CREATE TEMPORARY TABLE students_more_than_75_marks AS
+SELECT id, name, marks
+FROM students
+WHERE marks >= 75;
+
+-- Q8
+CREATE TEMPORARY TABLE students_from_delhi AS
+SELECT *
+FROM students
+WHERE city = 'Delhi';
+
+SELECT AVG(marks) FROM students_from_delhi;
+
+-- Q9
+CREATE TEMPORARY TABLE student_02 AS
+SELECT name, city, marks
+FROM students;
