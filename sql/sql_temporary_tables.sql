@@ -197,3 +197,29 @@ FROM monthly_sales
 GROUP BY product_name
 HAVING SUM(quantity * unit_price) >  10000;
 
+/*
+Question 15: Mastery challenge
+Difficulty: Challenge
+Q15. Student Performance Analysis
+A school administrator wants to prepare a temporary working table for a student performance
+report.
+The report must:
+●​ Include students who scored at least 75 marks.
+●​ Include only students who live in Delhi or Mumbai.
+●​ Store each qualifying student's id, name, city, and marks in a temporary table named
+performance_report.
+●​ Display the stored records for inspection.
+●​ Calculate the average marks of the students in that temporary table.
+Write the SQL statements needed to complete this task in MySQL.
+*/
+
+-- Q15
+CREATE TEMPORARY TABLE performance_report AS
+SELECT id, name, city, marks
+FROM students
+WHERE (city = 'Delhi' OR city = 'Mumbai')
+AND marks >= 75;
+
+SELECT * FROM performance_report;
+
+SELECT AVG(marks) FROM performance_report;
