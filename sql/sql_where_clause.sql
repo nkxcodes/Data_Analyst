@@ -155,3 +155,24 @@ SELECT *
 FROM students
 WHERE (city = 'Delhi' AND marks >= 80)
 OR (city = 'Mumbai' AND marks >= 90);
+
+/*
+Question 15: Mastery challenge
+Difficulty: Challenge
+Q15. Student Eligibility Report
+A school needs a list of students who qualify for a special academic program.
+The eligibility rules are:
+●​ Students must be at least 16 years old.
+●​ They must have scored at least 75 marks.
+●​ They must live in Delhi, Mumbai, or Jaipur.
+●​ Their marks must be recorded; students with missing marks cannot qualify.
+●​ Display each qualifying student's id, name, age, city, and marks.
+Write a single SQL query that generates the report.
+*/
+
+SELECT id, name, age, city, marks
+FROM students
+WHERE age >= 16
+AND marks >= 75
+AND city IN ('Delhi', 'Mumbai', 'Jaipur')
+AND marks IS NOT NULL;
