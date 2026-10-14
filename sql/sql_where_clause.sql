@@ -77,3 +77,54 @@ SELECT name FROM students WHERE name LIKE 'A%';
 
 -- Q9
 SELECT name, marks, city FROM students WHERE city = 'Jaipur' AND marks BETWEEN 60 AND 85;
+
+/*
+Questions 10–12: Deeper understanding
+Difficulty: Tricky
+Q10. Predict the result.
+Consider these student records:
+namecity
+marks
+AmanDelhi85
+RiyaMumbai65
+KaranDelhi45
+NehaJaipur90
+A query filters students using the condition city = 'Delhi' AND marks > 50.
+Which students will appear in the result? Explain why the other students are excluded.
+Q11. Find the mistake.
+A beginner wants to retrieve students who live in Delhi or Mumbai and writes:
+SELECT name, city
+FROM students
+WHERE city = 'Delhi' OR 'Mumbai';
+Identify the problem with the condition and rewrite the query correctly.
+Q12. Understand NULL.
+The students table contains some records where marks is NULL, meaning the marks are
+unknown or missing.
+The administrator wants to find students whose marks have not been recorded.
+●​ Write the appropriate filtering condition.
+●​ Explain why checking whether marks equals NULL is not the correct approach.
+●​ What is the difference between a missing value and a marks value of zero?
+*/
+
+-- Q10
+/*
+Only Aman will appear in the result because he
+satisfies both conditions:
+1. His city is Delhi.
+2. His marks are greater than 50.
+
+Riya and Neha are excluded because they don't
+live in Delhi. Karan is excluded because his
+marks are not greater than 50.
+*/
+
+-- Q11
+SELECT name, city
+FROM students
+WHERE city = 'Delhi'
+OR city = 'Mumbai';
+
+-- Q12
+SELECT *
+FROM students
+WHERE marks IS NULL;
