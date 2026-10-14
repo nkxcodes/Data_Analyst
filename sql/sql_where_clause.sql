@@ -128,3 +128,30 @@ OR city = 'Mumbai';
 SELECT *
 FROM students
 WHERE marks IS NULL;
+
+/*
+Questions 13–14: Mixed problems
+Difficulty: Mixed
+Q13. A Python variable stores the minimum required marks:
+minimum_marks = 75
+Write a SQL query to display the names and marks of students whose marks are greater than
+the value stored in minimum_marks.
+Assume you're writing a normal SQL query, not Python code that automatically substitutes the
+variable.
+Q14. A school administrator wants to find students who meet either of these requirements:
+●​ They live in Delhi and have scored at least 80 marks.
+●​ They live in Mumbai and have scored at least 90 marks.
+Display their names, cities, and marks. Make sure each city has its own correct marks
+requirement.
+*/
+
+-- Q13
+SELECT name, marks
+FROM students
+WHERE marks > 75;
+
+-- Q14
+SELECT *
+FROM students
+WHERE (city = 'Delhi' AND marks >= 80)
+OR (city = 'Mumbai' AND marks >= 90);
