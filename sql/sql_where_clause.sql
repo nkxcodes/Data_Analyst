@@ -20,6 +20,8 @@ VALUES
 (7, 'Karan', 18, 81, 'Mumbai'),
 (8, 'Ananya', 17, 73, 'Jaipur');
 
+-- SQL Where Clause
+
 /*
 Questions 1–3: Absolute basics
 Difficulty: Easy
