@@ -170,3 +170,27 @@ FROM students
 WHERE age >= 16
 AND IN ('Delhi', 'Mumbai')
 ORDER BY city ASC, marks DESC, name ASC;
+
+/*
+Question 15: Mastery challenge
+Difficulty: Challenge
+Q15. Student Merit List
+A school wants to prepare a merit list for a special academic program.
+The report must:
+Include students who scored at least 75 marks.
+Include only students who live in Delhi, Mumbai, or Jaipur.
+Display each student's id, name, city, age, and marks.
+Rank students by marks from highest to lowest.
+If students have equal marks, place the older student first.
+If both marks and age are equal, arrange their names alphabetically.
+Display only the first 10 records.
+Write a SQL query that produces the requested merit list.
+*/
+
+-- Q15
+SELECT id, name, city, age, marks
+FROM students
+WHERE marks >= 75
+AND city IN ('Delhi', 'Mumbai', 'Jaipur')
+ORDER BY marks DESC, age DESC, name ASC
+LIMIT 10;
