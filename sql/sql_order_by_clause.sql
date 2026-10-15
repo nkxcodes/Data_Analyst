@@ -57,3 +57,29 @@ Riya
 Ascending - Smallest to Largest
 Descending - Largest to Smallest
 */
+
+/*
+Questions 4–6: Core concepts
+Difficulty: Medium
+Q4. The school wants to arrange students from youngest to oldest. Write a query that displays
+their names and ages in the correct order.
+Q5. The administrator wants to sort students by city alphabetically and, within each city,
+arrange students from highest marks to lowest. Write the query.
+Q6. A teacher wants to sort students by marks in descending order and then by name in
+ascending order. Write a query that applies both sorting rules.
+*/
+
+-- Q4
+SELECT name, age
+FROM students
+ORDER BY age asc;
+
+-- Q5
+SELECT name, city, marks
+FROM students
+ORDER BY city asc, marks desc;
+
+-- Q6
+SELECT name, marks 
+FROM students
+ORDER BY marks desc, name asc;
