@@ -83,3 +83,61 @@ ORDER BY city asc, marks desc;
 SELECT name, marks 
 FROM students
 ORDER BY marks desc, name asc;
+
+/*
+Questions 10–12: Deeper understanding
+Difficulty: Tricky
+Q10. the result.
+Consider these records:
+name
+marks
+Aman80
+Riya95
+Karan80
+Neha70
+A query sorts the table by marks in descending order.
+●​ Which student or students will appear first?
+●​ Where will the two students with 80 marks appear relative to the student with 95 marks?
+●​ Can you guarantee the order of Aman and Karan without specifying another sorting
+column? Explain.
+Q11. Find the mistake.
+A beginner wants to display students from highest marks to lowest but writes:
+SELECT name, marks
+FROM students
+ORDER BY marks;
+The beginner believes this automatically sorts from highest to lowest.
+Explain the misunderstanding and rewrite the query so it follows the requirement.
+Q12. Understand multiple-column sorting.
+Consider this query:
+SELECT name, city, marks
+FROM students
+ORDER BY city ASC, marks DESC;
+Explain how MySQL decides the order of the records.
+What happens when two students have the same city but different marks? What happens when
+both their city and marks are the same?
+*/
+
+-- Q11
+/*
+1. Riya
+2. Both Aman and Karan will appear after Riya.
+3. No.
+*/
+
+-- Q12
+/*
+MySQL sorts records according to the columns listen in the
+ORDER BY clause, from left to right.
+
+First, city ASC arranges cities alphabetically. Within
+the same city, marks DESC arranges students from highest
+marks to lowest.
+
+If two students have the same city but different marks,
+the student with higher marks appears first.
+
+If both their city and marks are the same, their relative
+order is not guaranteed because no additional sorting rule
+has been specified. We can use name ASC as a third sorting
+column to arrange them alphabetically.
+*/
