@@ -141,3 +141,32 @@ order is not guaranteed because no additional sorting rule
 has been specified. We can use name ASC as a third sorting
 column to arrange them alphabetically.
 */
+
+/*
+Questions 13–14: Mixed problems
+Difficulty: Mixed
+Q13. A Python variable stores a minimum marks threshold:
+minimum_marks = 70
+Write a SQL query that displays the names and marks of students who scored at least that
+threshold, arranging the highest-scoring students first.
+Assume you're writing a normal SQL query, so use the threshold value directly rather than
+automatically substituting the Python variable.
+Q14. A school administrator wants a report of students who are at least 16 years old and live in
+Delhi or Mumbai.
+The report must display their name, age, city, and marks. Arrange the results by city
+alphabetically, then by marks from highest to lowest, and then by name alphabetically.
+Write the query that satisfies all these requirements.
+*/
+
+-- Q13
+SELECT name, marks
+FROM students
+WHERE marks >= 70
+ORDER BY marks DESC;
+
+-- Q14
+SELECT name, age, city, marks
+FROM students
+WHERE age >= 16
+AND IN ('Delhi', 'Mumbai')
+ORDER BY city ASC, marks DESC, name ASC;
