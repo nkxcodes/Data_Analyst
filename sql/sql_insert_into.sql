@@ -76,3 +76,36 @@ VALUES ('Priya', 45000);
 -- Q6
 INSERT INTO products (product_id, product_name, price, stock)
 VALUES (101, 'Notebook', 50, 200);
+
+/*
+Questions 7–9: Practical application
+Difficulty: Application
+Q7. A school administrator receives records for two new students. Both records need to be
+added to the existing students table. Decide how you would insert both records efficiently in
+one SQL statement.
+Use these records:
+●​ Meera, 17, Delhi, Female, 81 marks
+●​ Rahul, 18, Jaipur, Male, 76 marks
+Assume id is auto-incremented.
+Q8. A company has an existing table called new_employees with the columns name,
+department, and salary. Another table, applicants, contains the same columns and holds
+the records of selected applicants.
+Write a query to copy all applicants into new_employees without manually entering every
+person's information.
+Q9. An online store receives a new order with an order ID of 501, customer ID of 12, and total
+amount of 2,500. The orders table contains order_id, customer_id, and total_amount.
+Write the query needed to record this order.
+*/
+
+-- Q7
+INSERT INTO students (name, age, city, gender, marks)
+VALUES ('Meera', 17, 'Delhi', 'Female', 81), ('Rahul', 18, 'Jaipur', 'Male', 76);
+
+-- Q8
+INSERT INTO new_employees (name, department, salary)
+SELECT name, department, salary
+FROM applicants;
+
+-- Q9
+INSERT INTO orders (order_id, customer_id, total_amount)
+VALUES (501, 12, 2500);
