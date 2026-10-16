@@ -205,3 +205,26 @@ records with a single statement.
 
 INSERT INTO students (name, age, city, gender, marks)
 VALUES ('Dev', 16, 'Mumbai', 'Male', 82), ('Ananya', 17, 'Delhi', 'Female', 91), ('Kabir', 18, 'Jaipur', 'Male', 69);
+
+/*
+Question 15: Mastery challenge
+Difficulty: Challenge
+Q15. Student Registration System
+A school is registering three new students in its database. The students table contains id,
+name, age, city, gender, and marks, with id set to auto-increment.
+The school provides these records:
+name
+age
+city
+gender
+marks
+Aditi 17 Delhi Female 89
+Mohit 18 Mumbai Male 77
+Sana 16 Jaipur Female 95
+Write the SQL statement or statements needed to add all three students correctly. Then explain
+how you would verify that the records were inserted successfully.
+*/
+
+-- Q15
+INSERT INTO students (name, age, city, gender, marks)
+VALUES ('Aditi', 17, 'Delhi', 'Female', 89), ('Mohit', 18, 'Mumbai', 'Male', 77), ('Sana', 16, 'Jaipur', 'Female', 95);
