@@ -43,3 +43,36 @@ VALUES ('Aman', 17, 'Delhi', 'Male', 85)
 -- Q3
 INSERT INTO students (name, age, city, marks)
 VALUES ('Riya', 16, 'Mumbai', 92)
+
+/*
+Questions 4–6: Core concepts
+Difficulty: Medium
+Q4. Write a single SQL statement to insert three students into the students table:
+name
+age
+city
+gender
+marks
+Karan 17 Jaipur Male 78
+Neha 16 Delhi Female 88
+Arjun 18 Mumbai Male 73
+Q5. A table named employees contains the columns id, name, department, and salary.
+You want to insert an employee with a name of Priya and a salary of 45,000, leaving
+department to its default value if one is defined. Write the query, assuming id is
+auto-incremented.
+Q6. The products table has columns product_id, product_name, price, and stock.
+Write a query that inserts a product with the values 101, Notebook, 50, and 200, explicitly
+matching each value to its intended column.
+*/
+
+-- Q4
+INSERT INTO students (name, age, city, gender, marks)
+VALUES ('Karan', 17, 'Jaipur', 'Male', 78), ('Neha', 16, 'Delhi', 'Female', 88), ('Arjun', 18, 'Mumbai', 'Male', 73);
+
+-- Q5
+INSERT INTO employees (name, salary)
+VALUES ('Priya', 45000);
+
+-- Q6
+INSERT INTO products (product_id, product_name, price, stock)
+VALUES (101, 'Notebook', 50, 200);
