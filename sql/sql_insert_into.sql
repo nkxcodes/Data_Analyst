@@ -170,3 +170,38 @@ MySQL rejects the row. A NOT NULL constraint prevents a
 column from receiving NULL; inserting NULL into such a 
 column causes an error.
 */
+
+/*
+Questions 13–14: Mixed problems
+Difficulty: Mixed
+Q13. A Python program stores information about a student in variables:
+student_name = "Simran"student_age = 17student_city = "Delhi"student_gender =
+"Female"student_marks = 94
+Write a normal MySQL INSERT INTO statement to add this student's details to the students
+table.
+For this exercise, write the SQL query using the actual values rather than trying to execute the
+Python variables directly inside SQL.
+Q14. A school receives a list of three students from a Python program. Each student has a
+name, age, city, gender, and marks.
+Explain how you would prepare an SQL INSERT INTO statement to add all three students in
+one operation. Then write the SQL statement for these records:
+●​ Dev, 16, Mumbai, Male, 82
+●​ Ananya, 17, Delhi, Female, 91
+●​ Kabir, 18, Jaipur, Male, 69
+Assume id is auto-incremented.
+*/
+
+-- Q13
+INSERT INTO students (student_name, student_age, student_city, student_gender, student_marks)
+VALUES ('Simran', 17, 'Delhi', 'Female', 94);
+
+-- Q14
+/*
+First, specify the target table and the column names.
+Than use VALUES followers by three parenthesized sets of values,
+separating each set with a comma, MySQL inserts all three
+records with a single statement.
+*/
+
+INSERT INTO students (name, age, city, gender, marks)
+VALUES ('Dev', 16, 'Mumbai', 'Male', 82), ('Ananya', 17, 'Delhi', 'Female', 91), ('Kabir', 18, 'Jaipur', 'Male', 69);
