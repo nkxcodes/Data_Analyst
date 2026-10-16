@@ -109,3 +109,64 @@ FROM applicants;
 -- Q9
 INSERT INTO orders (order_id, customer_id, total_amount)
 VALUES (501, 12, 2500);
+
+/*
+Q10 the behavior.
+Assume the students table already contains a student named Aman. You execute the same
+INSERT INTO statement for Aman twice, and the table has no unique constraint on the name
+column.
+What happens to the records? Would SQL automatically prevent the duplicate name? Explain
+why or why not.
+Q11. Find the mistake.
+A beginner wants to insert a new student but writes:
+INSERT INTO students (name, age, city, marks)
+VALUES ('Riya', 16, 'Mumbai');
+Identify the problem with this statement and explain why the number of supplied values matters.
+Q12. Understand column order and constraints.
+Consider the following query:
+INSERT INTO students (name, age, city, marks)
+VALUES (17, 'Aman', 'Delhi', 85);
+Assume name is a text column and age is an integer column.
+Explain what is wrong with this statement. Also, describe what could happen if you try to insert a
+value that violates a primary key or NOT NULL constraint.
+*/
+
+-- Q10
+/*
+If the students table already contains a student named Aman
+and the same INSERT INTO statement is executed twice, MySQL
+will insert additional rows, provided all other constraints
+are satisfied.
+
+SQL does not automatically prevent duplicate names when the
+name column has no UNIQUE constraint. A UNIQUE constraint
+can prevent duplicate non-NULL names, while a primary key
+or unique student ID is generally more appropriate for
+identifying individual students.
+*/
+
+-- Q12
+/*
+The mistake is that the INSERT INTO statement specifies four
+columns (name, age, city, and marks) but supplied only three values.
+
+The number of values must match the number of specified
+columns, and each value must correspond to the correct
+column position. To fix the statement, we can provide
+a marks value or omit the marks column if it allows a missing
+value or has suitable default.
+*/
+
+-- Q12
+/*
+The mistake is that the values are assigned to the wrong
+columns. The name column receives 17, while the integer
+age column receives 'Aman'. SQL matches values to columns
+by their specified order, so the values must be rearranged.
+
+A PRIMARY KEY constraint prevents duplicate key values and
+does not allow NULL. if an insert violates this constraint,
+MySQL rejects the row. A NOT NULL constraint prevents a
+column from receiving NULL; inserting NULL into such a 
+column causes an error.
+*/
