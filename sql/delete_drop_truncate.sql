@@ -80,3 +80,27 @@ while keeping its table structure for future use.
 It is suitable for clearing a table before loading
 a fresh dataset.
 */
+
+/*
+Questions 7–9: Practical application
+Difficulty: Application
+Q7. A school has decided to remove every student record belonging to the city of Bombay. Write
+the query needed to remove those records without affecting students from other cities.
+Q8. A company has a temporary table named monthly_report that was created for a
+one-time analysis. The analysis is complete, and the table is no longer required. Remove the
+table completely.
+Q9. An administrator wants to remove all students who scored below 40, then verify that the
+remaining records are still available and that the students table continues to exist. Write the
+SQL statements needed to perform the removal and verify the result.
+*/
+
+-- Q7
+DELETE FROM students WHERE city = 'Bombay';
+
+-- Q8
+DROP TABLE monthly_report;
+
+-- Q9
+DELETE FROM students WHERE marks < 40;
+
+SELECT * FROM students;
