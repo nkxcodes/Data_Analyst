@@ -159,3 +159,34 @@ Correct query:
 UPDATE students
 SET marks = marks + 10
 WHERE marks < 50.
+
+/*
+Questions 13–14: Mixed problems
+Difficulty: Mixed
+Q13. A Python variable stores the minimum marks threshold:
+minimum_marks = 75
+Write a normal SQL query that increases the marks of students scoring below this threshold by
+5.
+For this exercise, use the threshold value directly in SQL rather than automatically substituting
+the Python variable.
+Q14. A school wants to update student records according to these rules:
+●​ Students living in Delhi who scored below 60 should have their marks increased by 10.
+●​ Students living in Mumbai who scored below 60 should have their marks increased by 5.
+●​ Students who scored 60 or more must remain unchanged.
+Write a SQL statement or statements that correctly apply these rules without accidentally
+changing other students' marks.
+*/
+
+-- Q13
+UPDATE students
+SET marks = marks + 5
+WHERE marks < 75;
+
+-- Q14
+UPDATE students
+SET marks = marks + 10
+WHERE city = 'Delhi' AND marks < 60;
+
+UPDATE students
+SET marks = marks + 5
+WHERE city = 'Mumbai' AND marks < 60;
