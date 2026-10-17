@@ -73,3 +73,29 @@ SET marks = marks + 5;
 UPDATE students
 SET city = 'Delhi'
 WHERE name = 'Aman';
+
+/*
+Questions 7–9: Practical application
+Difficulty: Application
+Q7. A teacher decides that students whose marks are below 40 should receive a revised marks
+value of 40 after a correction process. Update the records according to this rule.
+Q8. A school administrator discovers that all students currently listed as living in Bombay should
+have their city recorded as Mumbai. Update the relevant records.
+Q9. A school is offering a 10-mark bonus to students who scored at least 80 marks and live in
+Delhi. Update the marks of only those students.
+*/
+
+-- Q7
+UPDATE students
+SET marks = 40
+WHERE marks < 40;
+
+-- Q8
+UPDATE students
+SET city = 'Mumbai'
+WHERE city = 'Bombay';
+
+-- Q9
+UPDATE students
+SET marks = marks + 10
+WHERE marks >= 80 AND city = 'Delhi';
