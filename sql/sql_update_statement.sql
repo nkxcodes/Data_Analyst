@@ -190,3 +190,29 @@ WHERE city = 'Delhi' AND marks < 60;
 UPDATE students
 SET marks = marks + 5
 WHERE city = 'Mumbai' AND marks < 60;
+
+/*
+Question 15: Mastery challenge
+Difficulty: Challenge
+Q15. Student Records Correction
+A school administrator is correcting student records in the students table.
+The correction requirements are:
+Students living in Bombay should have their city changed to Mumbai.
+Students who scored below 40 should have their marks changed to 40.
+Students who are 18 years old and live in Delhi should have their marks increased by 5.
+No other student records should be changed.
+Write the SQL statement or statements required to perform these corrections.
+*/
+
+-- Q15
+UPDATE students
+SET city = 'Mumbai'
+WHERE city = 'Bombay';
+
+UPDATE students
+SET marks = 40
+WHERE marks < 40;
+
+UPDATE students
+SET marks = marks + 5
+WHERE age = 18 AND city = 'Delhi';
