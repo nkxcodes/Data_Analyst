@@ -104,3 +104,68 @@ DROP TABLE monthly_report;
 DELETE FROM students WHERE marks < 40;
 
 SELECT * FROM students;
+
+/*
+the behavior.
+Consider the following query:
+DELETE FROM students;
+What happens when it runs? Will the table itself disappear? What happens to the records, and
+how does this differ from deleting just one student?
+Q11. Find the mistake.
+A beginner wants to delete students who scored below 30 and writes:
+DELETE students
+WHERE marks < 30;
+Identify the syntax problem and rewrite the statement correctly for MySQL.
+Q12. Understand the differences.
+Suppose students_backup contains 500 rows. Compare the expected results of these
+operations:
+●​ Deleting rows using DELETE without a WHERE condition.
+●​ Removing all rows using TRUNCATE TABLE.
+●​ Removing the entire table using DROP TABLE.
+For each operation, explain what remains afterward: the rows, the table structure, and the ability
+to insert new records without recreating the table.
+*/
+
+-- Q10
+/*
+When DELETE FROM students; runs,
+all records in the students table are deleted
+because there is no WHERE condition.
+
+The students table itself does not disappear.
+Its structure and columns remain available.
+
+When DELETE is used with WHERE, only rows
+matching the specified condition are deleted.
+*/
+
+-- Q11
+/*
+Syntax mistake:
+The FROM keyword is missing after DELETE.
+
+Correct query:
+*/
+DELETE FROM students WHERE marks < 30;
+
+-- Q12
+/*
+1. DELETE FROM students_backup;
+    - Removes all 500 rows
+    - The table structure remains.
+    - New records can be inserted without recreating the table.
+
+2. TRUNCATE TABLE students_backup;
+    - Removes all 500 rows.
+    - The table structure remains.
+    - New records can be inserted without recreating the table.
+
+3. DROP TABLE students_backup;
+    - Removes all 500 rows and the table structure.
+    - The table no longer exists.
+    - It must be recreated before new records can be inserted.
+
+Main difference:
+DELETE and TRUNCATE empty the table, whereas DROP
+removes the table itself.
+*/
