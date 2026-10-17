@@ -99,3 +99,63 @@ WHERE city = 'Bombay';
 UPDATE students
 SET marks = marks + 10
 WHERE marks >= 80 AND city = 'Delhi';
+
+/*
+Questions 10–12: Deeper understanding
+Difficulty: Tricky
+Q10. the behavior.
+Consider this query:
+UPDATE students
+SET marks = 90;
+What will happen when this statement is executed? Will it update one student, multiple students,
+or no students? Explain why the presence or absence of a filtering condition matters.
+Q11. Find the mistake.
+A beginner wants to change the city of student ID 105 to Mumbai and writes:
+UPDATE students
+SET city = 'Mumbai'
+id = 105;
+Identify the syntax mistake and rewrite the statement correctly.
+Q12. Understand conditional updates.
+A school wants to increase marks by 10 only for students whose current marks are below 50.
+A beginner proposes setting every student's marks to 10 instead of adding 10 to their existing
+marks.
+Explain why these two operations are different. What would happen to a student whose current
+marks are 45 under each approach?
+*/
+
+-- Q10
+/*
+It will update every row in the students table, setting
+every student's marks to 90.
+*/
+
+-- Q11
+/*
+Mistake:
+The WHERE clause is missing before id = 105.
+Without WHERE, the query is incomplete and causes a
+syntax error.
+
+Correct query:
+*/
+
+UPDATE students
+SET city = 'Mumbai'
+WHERE id = 105;
+
+-- Q12
+/*
+Explanation:
+Setting marks = 10 replaces the existing marks with 10.
+Setting marks = marks + 10 adds 10 to the existing marks.
+
+For a student with 45 marks:
+- marks =  10 changes 45 to 10.
+- marks =  marks + 1 changes 45 to 55.
+
+Correct query:
+*/
+
+UPDATE students
+SET marks = marks + 10
+WHERE marks < 50.
