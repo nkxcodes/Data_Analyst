@@ -53,3 +53,30 @@ DELETE FROM students WHERE id = 105;
 
 -- Q3
 TRUNCATE TABLE test_results;
+
+/*
+Questions 4–6: Core concepts
+Difficulty: Medium
+Q4. The school wants to delete all students whose marks are below 35. Write a query that
+removes only those students and preserves the remaining records.
+Q5. A temporary table named old_student_data is no longer needed. The school wants to
+remove both the table and its stored data. Write the appropriate SQL statement.
+Q6. The orders table contains thousands of records. A company wants to clear all its orders
+before loading a fresh dataset, but it wants to keep the table structure. Choose the appropriate
+statement and explain why it fits the requirement.
+*/
+
+-- Q4
+DELETE FROM students WHERE marks < 35;
+
+-- Q5
+DROP TABLE old_student_data;
+
+-- Q6
+TRUNCATE TABLE orders;
+/*
+TRUNCATE removes all records from the orders table
+while keeping its table structure for future use.
+It is suitable for clearing a table before loading
+a fresh dataset.
+*/
