@@ -45,4 +45,31 @@ WHERE id = 101;
 -- Q3
 UPDATE students
 SET city = 'Delhi'
-WHERE student_ID = 102;
+WHERE student_id = 102;
+
+/*
+Questions 4–6: Core concepts
+Difficulty: Medium
+Q4. The school has discovered that a student with ID 103 has an incorrect age and city. The
+correct age is 18, and the correct city is Jaipur. Update both columns in a single SQL
+statement.
+Q5. The school wants to increase the marks of every student by 5. Write a query that performs
+this change directly using the existing marks values.
+Q6. The school wants to correct the city of every student named Aman to Delhi. Write a query
+that updates all matching records, even if multiple students have that name.
+*/
+
+-- Q4
+UPDATE students
+SET age = 18,
+    city = 'Jaipur'
+WHERE student_id = 103;
+
+-- Q5
+UPDATE students
+SET marks = marks + 5;
+
+-- Q6
+UPDATE students
+SET city = 'Delhi'
+WHERE name = 'Aman';
