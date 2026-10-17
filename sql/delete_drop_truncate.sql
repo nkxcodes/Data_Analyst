@@ -169,3 +169,29 @@ Main difference:
 DELETE and TRUNCATE empty the table, whereas DROP
 removes the table itself.
 */
+
+/*
+Questions 13–14: Mixed problems
+Difficulty: Mixed
+Q13. A Python variable stores the minimum marks threshold:
+minimum_marks = 40
+Write a normal SQL query that deletes students whose marks are below this threshold. Use the
+threshold value directly in SQL rather than automatically substituting the Python variable.
+Q14. A school administrator has two tables:
+●​ students, which stores permanent student records.
+●​ temporary_import, which stores records imported for a one-time task.
+The administrator wants to remove students who scored below 25 from the permanent table,
+empty the imported records while preserving that table's structure, and then remove the
+imported table completely.
+Write the SQL statements needed to perform these three operations in the correct order.
+*/
+
+-- Q13
+DELETE FROM students WHERE marks < 40;
+
+-- Q14
+DELETE FROM students WHERE marks < 25;
+
+TRUNCATE TABLE temporary_import;
+
+DROP TABLE temporary_import;
