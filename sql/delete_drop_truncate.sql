@@ -195,3 +195,28 @@ DELETE FROM students WHERE marks < 25;
 TRUNCATE TABLE temporary_import;
 
 DROP TABLE temporary_import;
+
+/*
+Question 15: Mastery challenge
+Difficulty: Challenge
+Q15. Database Cleanup
+A school is cleaning up its MySQL database. It has the following requirements:
+●​ Remove students whose marks are below 20 from the students table.
+●​ Empty the old_attendance table while preserving its structure.
+●​ Completely remove the obsolete unused_reports table.
+●​ Ensure the permanent students table remains available for future queries and new
+records.
+Write the SQL statements needed to carry out the cleanup. For each statement, explain why
+you selected it and what will remain afterward.
+*/
+
+-- Q15
+
+-- Delete students scoring below 20; keep the table.
+DELETE FROM students WHERE marks < 20;
+
+-- Remove all rows; keep the table structure.
+TRUNCATE TABLE old_attendance;
+
+-- Remove the table and its data completely.
+DROP TABLE unused_reports;
