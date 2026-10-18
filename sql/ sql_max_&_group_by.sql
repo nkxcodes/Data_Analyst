@@ -88,3 +88,64 @@ SELECT department, MAX(salary) FROM employees GROUP BY department;
 
 -- Q9
 SELECT city, MAX(marks) FROM students GROUP BY city HAVING MAX(marks) > 80;
+
+/*
+Questions 10–12: Deeper understanding
+Q10. the result
+Suppose the students table contains these records:
+name city
+Aman Delhi
+marks 75
+Riya Delhi 92
+Mohan Mumbai 81
+Priya Mumbai 88
+What result will this query produce?
+SELECT city, MAX(marks)
+FROM students
+GROUP BY city;
+Write the expected output and explain why there are two rows.
+Q11. Find the mistake
+A beginner wants to display each city and its highest marks. They write:
+SELECT city, name, MAX(marks)
+FROM students
+GROUP BY city;
+Identify the problem with this query in MySQL when ONLY_FULL_GROUP_BY is enabled. Explain
+what makes name different from city and MAX(marks) in this query.
+Q12. Understand the difference
+Consider these two queries:
+SELECT MAX(marks)
+FROM students;
+SELECT city, MAX(marks)
+FROM students
+GROUP BY city;
+Explain how their results differ. Also, what happens if a city has several students with the same
+highest marks? Does MAX() automatically display every student's name who achieved that
+score?
+*/
+
+-- Q10
+/*
+Delhi 92
+Mumbai 88
+*/
+
+-- Q11
+/*
+-- name causes an error because each city has multiple students.
+-- Use GROUP BY columns or aggregate functions in SELECT.
+
+Correct query:
+*/
+
+SELECT city, MAX(marks) FROM students GROUP BY city;
+
+-- Q12
+/*
+The first query returns the highest marks in the entire 
+table. The second query returns the highest marks
+separately for each city using GROUP BY.
+MAX() returns only the maximum value, no the students'
+names . If multiple students achieve that score, their
+names are not automatically displayed. We need an 
+additionalquery to retrieve them.
+*/
