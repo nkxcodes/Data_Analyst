@@ -40,4 +40,28 @@ SELECT MAX(marks) FROM students;
 SELECT MAX(age) FROM students;
 
 -- Q3
-SELECT city, count(*) FROM students GROUP BY city;
+SELECT city, COUNT(*) FROM students GROUP BY city;
+
+/*
+Questions 4–6: Core concepts
+Q4. Finding the maximum value in each group
+Find the highest marks obtained in each city. Display the city and its highest marks.
+Q5. Combining aggregate functions
+For each city, display:
+●​ The city name.
+●​ The total number of students.
+●​ The highest marks.
+Q6. Grouping by multiple columns
+Your table contains city and gender columns.
+Find the highest marks for each combination of city and gender. For example, Delhi–Male and
+Delhi–Female should appear as separate groups.
+*/
+
+-- Q4
+SELECT city, MAX(marks) FROM students GROUP BY city;
+
+-- Q5
+SELECT city, COUNT(*), MAX(marks) FROM students GROUP BY city;
+
+-- Q6
+SELECT city, gender, MAX(marks) FROM students GROUP BY city, gender;
