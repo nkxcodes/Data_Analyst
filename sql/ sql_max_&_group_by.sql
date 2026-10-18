@@ -169,3 +169,21 @@ SELECT city, MAX(marks) FROM students GROUP BY city HAVING MAX(marks) > 85;
 
 -- Q14
 SELECT city, MAX(marks) FROM students WHERE marks >= 40 GROUP BY city;
+
+/*
+Question 15: Mastery challenge
+Q15. Student Performance Report
+The school principal wants a report showing the highest-performing student marks for each city,
+but only students who passed (marks of 40 or above) should be considered. The report should
+include only cities whose highest qualifying marks are at least 75, and the results should be
+arranged from the highest city-level score to the lowest.
+Write a single SQL query that produces this report.
+*/
+
+-- Q15
+SELECT city, MAX(marks)
+FROM students
+WHERE marks >= 40
+GROUP BY city
+HAVING MAX(marks) >= 75
+ORDER BY MAX(marks) DESC;
