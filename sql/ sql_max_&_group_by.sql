@@ -65,3 +65,26 @@ SELECT city, COUNT(*), MAX(marks) FROM students GROUP BY city;
 
 -- Q6
 SELECT city, gender, MAX(marks) FROM students GROUP BY city, gender;
+
+/*
+Questions 7–9: Practical application
+Q7. School performance analysis
+A school wants to know the highest marks obtained by students in each gender category.
+Write a query that provides this information.
+Q8. Finding the highest salary by department
+Imagine you have an employees table with these columns:
+id, name, department, salary
+Write a query to find the highest salary in each department.
+Q9. Identifying groups with a minimum performance level
+A school wants to see only those cities where the highest student marks are greater than 80.
+Display the city and its highest marks. Only qualifying cities should appear in the result.
+*/
+
+-- Q7
+SELECT gender, MAX(marks) FROM students GROUP BY gender;
+
+-- Q8
+SELECT department, MAX(salary) FROM employees GROUP BY department;
+
+-- Q9
+SELECT city, MAX(marks) FROM students GROUP BY city HAVING MAX(marks) > 80;
