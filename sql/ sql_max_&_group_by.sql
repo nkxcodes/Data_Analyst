@@ -149,3 +149,23 @@ names . If multiple students achieve that score, their
 names are not automatically displayed. We need an 
 additionalquery to retrieve them.
 */
+
+/*
+Questions 13–14: Mixed problems
+Q13. Combining variables and conditions
+You are analyzing student performance and have decided that a city should be considered only
+if its highest marks exceed a variable threshold of 85.
+Write the SQL query that displays the qualifying cities and their highest marks. In your written
+answer, represent the threshold as the number 85 in SQL.
+Q14. Combining WHERE, GROUP BY, and MAX()
+The school wants to analyze students who scored at least 40 marks, then find the highest marks
+in each city among those students.
+Write a query that displays each qualifying city and its highest marks, considering only students
+with marks greater than or equal to 40.
+*/
+
+-- Q13
+SELECT city, MAX(marks) FROM students GROUP BY city HAVING MAX(marks) > 85;
+
+-- Q14
+SELECT city, MAX(marks) FROM students WHERE marks >= 40 GROUP BY city;
