@@ -182,3 +182,27 @@ WHERE age >= 18
 GROUP BY city 
 HAVING SUM(marks) > 200 
 ORDER BY AVG(marks) DESC;
+
+/*
+Question 15: Mastery challenge
+Q15. Student Performance Summary
+The principal wants a report to identify cities that need academic support.
+Create a report that:
+●​ Considers only students aged 18 or older.
+●​ Includes only students who passed, with marks of 40 or above.
+●​ Displays each qualifying city, its number of qualifying students, total marks, and average
+marks.
+●​ Includes only cities with at least 3 qualifying students and an average mark below 65.
+●​ Sorts the results from the lowest average marks to the highest.
+Write one SQL query to generate the report.
+*/
+
+-- Q15
+SELECT city, COUNT(*), SUM(marks), AVG(marks)
+FROM students
+WHERE age >= 18
+AND marks >= 40
+GROUP BY city
+HAVING COUNT(*) >= 3
+AND AVG(marks) < 65
+ORDER BY AVG(marks) ASC;
