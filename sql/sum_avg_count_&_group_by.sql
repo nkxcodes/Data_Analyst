@@ -86,3 +86,75 @@ SELECT category, SUM(quantity) FROM sales GROUP BY category;
 
 -- Q9
 SELECT city, AVG(marks) FROM students GROUP BY city HAVING AVG(marks) >= 75;
+
+/*
+Questions 10–12: Deeper understanding
+the result
+Suppose the students table contains these records:
+name city marks
+Aman Delhi 60
+Riya Delhi 80
+Mohan Mumbai 70
+Priya Mumbai 90
+What result will this query produce?
+SELECT city, SUM(marks), AVG(marks), COUNT(*)
+FROM students
+GROUP BY city;
+Write the expected output and explain what each aggregate function calculates for each city.
+Q11. Find the mistake
+A beginner wants to find the average marks in each city but writes:
+SELECT city, AVG(marks)
+FROM students
+WHERE AVG(marks) > 70
+GROUP BY city;
+Identify the error and explain why the condition cannot be placed in WHERE in this query.
+Q12. Understand COUNT() and NULL
+Suppose a table named students contains these records:
+id name marks
+1 Aman 60
+2 Riya NULL
+3 Mohan 80
+4 Priya NULL
+Answer these questions:
+●​ What does COUNT(*) return?
+●​ What does COUNT(marks) return?
+●​ How do SUM(marks) and AVG(marks) treat the NULL values?
+●​ Why can COUNT(*) and COUNT(marks) return different results?
+*/
+
+-- Q10
+
+/*
+city SUM(marks) AVG(marks) COUNT(*)
+Delhi 140 70 2
+Mumbai 160 80 2
+
+GROUP BY city separate group for each city.
+SUM(marks) calculates the total marks per city.
+AVG(marks) calculates the average marks per city.
+COUNT(*) counts the students in each city.
+*/
+
+-- Q11
+
+/*
+-- WHERE filters rows before grouping.
+-- HAVING filters groups after aggregation.
+-- Therefore, AVG(marks) > 70 belongs in HAVING.
+
+Correct query:
+*/
+
+SELECT city, AVG(marks)
+FROM students
+GROUP BY city
+HAVING AVG(marks) > 70;
+
+-- Q12
+
+/*
+COUNT(*) counts all rows.
+COUNT(marks) ignores NULL marks.
+SUM() and AVG() ignore NULL values.
+Therefore, COUNT(*) and COUNT(marks) can differ.
+*/
