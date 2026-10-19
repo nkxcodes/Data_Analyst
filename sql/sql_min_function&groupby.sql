@@ -150,3 +150,22 @@ identify the student's name.
 -- If all values are NULL, MIN() returns NULL.
 -- MIN() does not treat NULL as zero.
 */
+
+/*
+Questions 13–14: Mixed problems
+Q13. Using a variable threshold
+You have decided that only cities with a minimum student mark below 35 should appear in your
+report.
+Write an SQL query that displays each city and its minimum marks, keeping only cities whose
+minimum marks are less than 35.
+Q14. Combining WHERE, GROUP BY, and HAVING
+A school wants to analyze students aged 18 or older. For each city, find the lowest marks
+among these students, but display only cities whose resulting minimum marks are below 50.
+Write the complete SQL query.
+*/
+
+-- Q13
+SELECT city, MIN(marks) FROM students GROUP BY city HAVING MIN(marks) < 35;
+
+-- Q14
+SELECT city, MIN(marks) FROM students WHERE age >= 18 GROUP BY city HAVING MIN(marks) < 50;
