@@ -39,3 +39,26 @@ SELECT MIN(age) FROM students;
 
 -- Q3
 SELECT city, MIN(marks) FROM students GROUP BY city;
+
+/*
+Questions 4–6: Core concepts
+Q4. Combining aggregate functions
+For each city, display:
+●​ The city name.
+●​ The lowest marks.
+●​ The highest marks.
+Q5. Grouping by multiple columns
+Using the city and gender columns, find the lowest marks for each city–gender combination.
+Q6. Counting students alongside minimum marks
+For each city, display the city name, the total number of students, and the lowest marks in that
+city.
+*/
+
+-- Q4
+SELECT city, MIN(marks), MAX(marks) FROM students GROUP BY city;
+
+-- Q5
+SELECT city, gender, MIN(marks) FROM students GROUP BY city, gender;
+
+-- Q6
+SELECT city, COUNT(*), MIN(marks) FROM students GROUP BY city;
