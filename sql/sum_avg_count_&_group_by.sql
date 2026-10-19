@@ -38,3 +38,26 @@ SELECT AVG(marks) FROM students;
 
 -- Q3
 SELECT COUNT(*) FROM students;
+
+/*
+Questions 4–6: Core concepts
+Q4. Combining SUM() and AVG()
+Write a query that displays both the total marks and average marks of all students in one result.
+Q5. Counting students in each city
+Write a query to display each city and the number of students belonging to that city.
+Q6. Calculating grouped totals and averages
+For each city, display:
+The city name.
+The total marks of its students.
+The average marks of its students.
+The number of students in that city.
+*/
+
+-- Q4
+SELECT SUM(marks), AVG(marks) FROM students;
+
+-- Q5
+SELECT city, COUNT(*) FROM students GROUP BY city;
+
+-- Q6
+SELECT city, SUM(marks), AVG(marks), COUNT(*) FROM students GROUP BY city;
