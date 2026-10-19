@@ -158,3 +158,27 @@ COUNT(marks) ignores NULL marks.
 SUM() and AVG() ignore NULL values.
 Therefore, COUNT(*) and COUNT(marks) can differ.
 */
+
+/*
+Questions 13–14: Mixed problems
+Q13. Combining filtering and aggregation
+A school wants to analyze only students who scored at least 40 marks.
+Write a query that groups these students by city and displays each city's student count and
+average marks.
+Q14. Combining multiple conditions
+A school wants a report for students aged 18 or older. For each city, calculate the total marks
+and average marks of these students. Display only cities whose total marks exceed 200, and
+sort the results by average marks from highest to lowest.
+Write the complete SQL query.
+*/
+
+-- Q13
+SELECT city, COUNT(*), AVG(marks) FROM students WHERE marks >= 40 GROUP BY city;
+
+-- Q14
+SELECT city, SUM(marks), AVG(marks) 
+FROM students 
+WHERE age >= 18 
+GROUP BY city 
+HAVING SUM(marks) > 200 
+ORDER BY AVG(marks) DESC;
