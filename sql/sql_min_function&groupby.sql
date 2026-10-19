@@ -169,3 +169,25 @@ SELECT city, MIN(marks) FROM students GROUP BY city HAVING MIN(marks) < 35;
 
 -- Q14
 SELECT city, MIN(marks) FROM students WHERE age >= 18 GROUP BY city HAVING MIN(marks) < 50;
+
+/*
+Question 15: Mastery challenge
+Q15. Student Performance Report
+The principal wants to identify the cities where students need the most academic support.
+Create a report that:​
+Considers only students aged 18 or older.
+Considers only students who passed, with marks of 40 or above.
+Displays each qualifying city and its lowest marks among these students.
+Includes only cities whose lowest qualifying marks are below 60.
+Sorts the results from the lowest marks to the highest.
+Write one SQL query to generate the report.
+*/
+
+-- Q15
+SELECT city, MIN(marks)
+FROM students
+WHERE age >= 18
+AND marks >= 40
+GROUP BY city
+HAVING MIN(marks) < 60
+ORDER BY MIN(marks) ASC;
