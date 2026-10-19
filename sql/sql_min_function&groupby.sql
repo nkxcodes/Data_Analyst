@@ -62,3 +62,31 @@ SELECT city, gender, MIN(marks) FROM students GROUP BY city, gender;
 
 -- Q6
 SELECT city, COUNT(*), MIN(marks) FROM students GROUP BY city;
+
+/*
+Questions 7–9: Practical application
+Q7. School attendance analysis
+Imagine you have an attendance table with these columns:
+student_id, student_name, attendance_percentage
+The school wants to identify the lowest attendance percentage among all students.
+Write the query that produces this result.
+Q8. Finding the cheapest product
+Imagine you have a products table containing:
+product_id, product_name, category, price
+A shopkeeper wants to know the cheapest product price in each category. Write a query to
+produce this report.
+Q9. Analyzing passing students
+The school wants to find the lowest passing marks in each city. A student passes with marks of
+40 or above.
+Write a query that considers only passing students and displays each city with its lowest
+qualifying marks.
+*/
+
+-- Q7
+SELECT MIN(attendance_percentage) FROM attendance;
+
+-- Q8
+SELECT category, MIN(price) FROM products GROUP BY category;
+
+-- Q9
+SELECT city, MIN(marks) FROM students WHERE marks >= 40 GROUP BY city;
