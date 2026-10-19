@@ -90,3 +90,63 @@ SELECT category, MIN(price) FROM products GROUP BY category;
 
 -- Q9
 SELECT city, MIN(marks) FROM students WHERE marks >= 40 GROUP BY city;
+
+/*
+Questions 10–12: Deeper understanding
+the result
+Suppose the students table contains these records:
+name city marks
+Aman Delhi 75
+Riya Delhi 92
+Mohan Mumbai 81
+Priya Mumbai 88
+What output will this query produce?
+SELECT city, MIN(marks)
+FROM students
+GROUP BY city;
+Write the expected result and explain why the query produces one row per city.
+Q11. Find the mistake
+A beginner wants to find the lowest marks in each city and writes:
+SELECT city, name, MIN(marks)
+FROM students
+GROUP BY city;
+Identify the problem with this query in MySQL when ONLY_FULL_GROUP_BY is enabled. Explain
+why name causes a problem and why MIN(marks) does not automatically identify the student
+who earned those marks.
+Q12. Understand NULL and MIN()
+Suppose a table named students contains these marks:
+name marks
+Aman 60
+Riya NULL
+Mohan 45
+Priya NULL
+Answer these questions:
+●​ What does MIN(marks) return?
+●​ What happens if every value in the marks column is NULL?
+●​ Does MIN() treat NULL as zero?
+*/
+
+-- Q10
+/*
+Delhi 75
+Mumbai 81
+
+SQL produce one row per city because GROUP BY city creates
+one group for each distinct city, and MIN(marks) calculates
+one minimum value for each group.
+*/
+
+-- Q11
+/*
+-- The name column is neither aggregated nor included in
+GROUP BY.
+-- MIN(marks) finds the lowest marks, but does not
+identify the student's name.
+*/
+
+-- Q12
+/*
+-- MIN(marks) ignores NULL values.
+-- If all values are NULL, MIN() returns NULL.
+-- MIN() does not treat NULL as zero.
+*/
