@@ -61,3 +61,28 @@ SELECT city, COUNT(*) FROM students GROUP BY city;
 
 -- Q6
 SELECT city, SUM(marks), AVG(marks), COUNT(*) FROM students GROUP BY city;
+
+/*
+Questions 7–9: Practical application
+Q7. Analyzing student performance by gender
+The school wants to compare academic performance across gender categories.
+Write a query that displays each gender, its average marks, and the total number of students in
+that category.
+Q8. Monthly sales report
+Imagine you have a sales table with these columns:
+sale_id, product_name, category, quantity, unit_price
+The manager wants to know how many units were sold in each product category. Write a query
+to generate this report.
+Q9. Finding high-performing cities
+The principal wants to see only cities where the average student marks are at least 75.
+Display each qualifying city and its average marks.
+*/
+
+-- Q7
+SELECT gender, AVG(marks), COUNT(*) FROM students GROUP BY gender;
+
+-- Q8
+SELECT category, SUM(quantity) FROM sales GROUP BY category;
+
+-- Q9
+SELECT city, AVG(marks) FROM students GROUP BY city HAVING AVG(marks) >= 75;
