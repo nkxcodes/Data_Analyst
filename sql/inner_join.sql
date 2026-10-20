@@ -96,3 +96,45 @@ FROM employees AS e
 INNER JOIN departments AS d
 ON e.department_id = d.department_id
 WHERE d.department_name = 'IT';
+
+/*
+Questions 7–9: Practical application
+Q7. Customer order report
+An online store has two tables:
+●​ customers(customer_id, customer_name, city)
+●​ orders(order_id, customer_id, amount)
+The manager wants a report showing each customer's name, city, order ID, and order amount.
+Write the query needed to generate this report.
+Q8. Students and courses
+A school has these tables:
+●​ students(student_id, name, age)
+●​ enrollments(student_id, course_id)
+●​ courses(course_id, course_name)
+The school wants to see which students are enrolled in which courses.
+Write a query displaying each student's name and the course name.
+Q9. Finding qualifying purchases
+Using the customers and orders tables from Q7, the manager wants to see customers
+whose orders have an amount greater than 1,000.
+Display the customer name, order ID, and amount.
+*/
+
+-- Q7
+SELECT c.customer_name, c.city, o.order_id, o.amount
+FROM customers AS c
+INNER JOIN orders AS o
+ON c.customer_id = o.customer_id;
+
+-- Q8
+SELECT s.name, c.course_name
+FROM students AS s
+INNER JOIN enrollments AS e
+ON s.student_id = e.student_id
+INNER JOIN courses AS c
+ON e.course_id = c.course_id;
+
+-- Q9
+SELECT c.customer_name, o.order_id, o.amount
+FROM customers AS c
+INNER JOIN orders AS o
+ON c.customer_id = o.customer_id
+WHERE o.amount > 1000;
