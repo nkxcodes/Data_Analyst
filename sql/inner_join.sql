@@ -138,3 +138,20 @@ FROM customers AS c
 INNER JOIN orders AS o
 ON c.customer_id = o.customer_id
 WHERE o.amount > 1000;
+
+/*
+Questions 13–14: Mixed problems
+Q13. Combining joins with conditions and sorting
+You have these tables:
+●​ employees(id, name, department_id, salary)
+●​ departments(department_id, department_name)
+Write a query to display the names, salaries, and department names of employees earning
+more than 50,000. Sort the result from highest salary to lowest.
+Q14. Joining three tables
+A shop stores information in three tables:
+●​ orders(order_id, customer_id, product_id, quantity)
+●​ customers(customer_id, customer_name)
+●​ products(product_id, product_name, price)
+Write a query that displays the order ID, customer name, product name, quantity, and price for
+orders with matching customer and product records.
+*/
