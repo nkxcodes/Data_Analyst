@@ -155,3 +155,11 @@ A shop stores information in three tables:
 Write a query that displays the order ID, customer name, product name, quantity, and price for
 orders with matching customer and product records.
 */
+
+-- Q13
+SELECT e.name, e.salary, d.department_name
+FROM employees AS e
+INNER JOIN departments AS d
+ON e.department_id = d.department_id
+WHERE e.salary > 50000
+ORDER BY e.salary DESC;
