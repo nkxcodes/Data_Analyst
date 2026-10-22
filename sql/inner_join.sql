@@ -171,3 +171,26 @@ INNER JOIN customers AS c
 ON o.customer_id = c.customer_id
 INNER JOIN products AS p
 ON o.product_id = p.product_id;
+
+/*
+Question 15: Mastery challenge
+Q15. Student Course Performance Report
+A school stores information in three tables:
+●​ students(student_id, name, city)
+●​ enrollments(student_id, course_id, marks)
+●​ courses(course_id, course_name)
+The principal wants a report of students who have matching enrollment and course records and
+scored at least 75 in a course.
+The report must display the student's name, city, course name, and marks. Sort the results from
+highest marks to lowest.
+Write one SQL query to generate the report.
+*/
+
+SELECT s.name, s.city, c.course_name, e.marks
+FROM students AS s
+INNER JOIN enrollments AS e
+ON s.student_id = e.student_id
+INNER JOIN courses AS c
+ON e.course_id = c.course_id
+WHERE e.marks >= 75
+ORDER BY e.marks DESC;
