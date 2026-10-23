@@ -140,6 +140,86 @@ ON c.customer_id = o.customer_id
 WHERE o.amount > 1000;
 
 /*
+Questions 10–12: Deeper understanding
+Q10. the result
+Consider these tables:
+students
+id name
+1 Aman
+2 Riya
+3 Mohan
+
+marks
+student_id subject score
+1 SQL 80
+1 Python 90
+2 SQL 75
+What result will this query produce?
+SELECT s.name, m.subject, m.score
+FROM students AS s
+INNER JOIN marks AS m
+ON s.id = m.student_id;
+Write the expected rows. Explain why Aman appears twice and Mohan does not appear.
+Q11. Find the mistake
+A beginner wants to join students and student_marks, matching students.id with
+student_marks.student_id.
+They write:
+SELECT students.name, student_marks.marks
+FROM students
+INNER JOIN student_marks;
+Identify the problem with this query and explain what is missing for the intended join.
+Q12. Understanding unmatched and duplicate records
+Suppose one customer has three matching orders, another customer has no orders, and a third
+customer has one order.
+Answer these questions:
+●​ How many result rows will each customer contribute to an INNER JOIN?
+●​ Will the customer with no orders appear?
+●​ If both tables contain multiple records with the same join key, why can the result contain
+more rows than either original table?
+*/
+
+-- Q10
+/*
+Aman SQL 80
+Aman Python 90
+Riya SQL 75
+
+Aman appears twice because he has two matching records in the
+marks table.
+Mohan does not appear because he has no matching record in
+the marks table.
+*/
+
+-- Q11
+/*
+SELECT students.name, student_marks.marks
+FROM students
+INNER JOIN student_marks
+ON students.id = student_marks.student_id;
+
+The query is missing the ON clause.
+The ON clause is needed to match students.id with
+student_marks.student_id.
+Without it, the query does not specify the intended
+matching condition.
+*/
+
+-- Q12
+/*
+1.  Customer with 3 orders contributes 3 rows.
+    Customer with 0 orders contributes 0 rows.
+    Customer with 1 order contributes 1 row.
+
+2. The customer with no orders does not appear because
+    INNER JOIN returns only matching records.
+
+3.  When multiple records have the same join key in both
+    tables, each matching records can pair with multiple
+    records from the other table.
+    This can produce more rows than either original table.
+*/
+
+/*
 Questions 13–14: Mixed problems
 Q13. Combining joins with conditions and sorting
 You have these tables:
