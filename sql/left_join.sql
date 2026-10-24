@@ -167,3 +167,26 @@ LEFT JOIN enrollments AS e
 ON s.student_id = e.student_id
 LEFT JOIN courses AS c
 ON e.course_id = c.course_id;
+
+/*
+Question 15: Mastery challenge
+Q15. Student Enrollment Audit
+A school wants to identify students who may need follow-up because they have not enrolled in
+any course.
+The database contains:
+●​ students(student_id, name, city)
+●​ enrollments(student_id, course_id, enrollment_date)
+●​ courses(course_id, course_name)
+Create a report that displays each student’s name and city, along with their course name and
+enrollment date when available. Students without enrollments must remain in the report. Your
+final report should make it possible to identify students who have no enrollment records.
+Write one SQL query to generate the report.
+*/
+
+-- Q15
+SELECT s.name, s.city, c.course_name, e.enrollment_date
+FROM students AS s
+LEFT JOIN enrollments AS e
+ON s.student_id = e.student_id
+LEFT JOIN courses AS c
+ON e.course_id = c.course_id;
