@@ -134,3 +134,36 @@ FROM products AS p
 LEFT JOIN sales AS s
 ON p.product_id = s.product_id
 WHERE s.sale_id IS NULL;
+
+/*
+Questions 13–14: Mixed problems
+Q13. Combining LEFT JOIN, conditions, and sorting
+A school has these tables:
+●​ students(student_id, name, city)
+●​ enrollments(student_id, course_id, marks)
+Write a query that displays every student's name and city, along with their marks when
+available. Sort the results alphabetically by student name.
+Q14. Joining three tables
+A school stores data in these tables:
+●​ students(student_id, name, city)
+●​ enrollments(student_id, course_id, marks)
+●​ courses(course_id, course_name)
+The school wants to display every student and their enrolled course names and marks when
+available. Students without enrollment records must still appear.
+Write a query that produces this report.
+*/
+
+-- Q13
+SELECT s.name, s.city, e.marks
+FROM students AS s
+LEFT JOIN enrollments AS e
+ON s.student_id = e.student_id
+ORDER BY s.name ASC;
+
+-- Q14
+SELECT s.*, c.course_name, e.marks
+FROM students AS s
+LEFT JOIN enrollments AS e
+ON s.student_id = e.student_id
+LEFT JOIN courses AS c
+ON e.course_id = c.course_id;
