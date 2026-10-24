@@ -92,3 +92,45 @@ even though the customer exists in the database is because
 we are doing LEFT JOIN, it gives all rows from left table
 and matching rows from the right table.
 */
+
+/*
+Questions 7–9: Practical application
+Q7. Customers who have never ordered
+An online store wants to identify customers who have never placed an order.
+Using customers(customer_id, customer_name) and orders(order_id,
+customer_id, amount), write a query that displays only customers who have no matching
+order.
+Q8. Employee department report
+A company has these tables:
+●​ employees(id, name, department_id, salary)
+●​ departments(department_id, department_name)
+The company wants a report containing every employee's name, salary, and department name.
+Employees without a matching department must still appear.
+Write the query.
+Q9. Products with no sales
+A shop has two tables:
+●​ products(product_id, product_name, price)
+●​ sales(sale_id, product_id, quantity_sold)
+The manager wants to find products that have never been sold.
+Write a query to identify those products, including their names and prices.
+*/
+
+-- Q7
+SELECT c.*, o.order_id, o.amount
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.customer_id = o.customer_id
+WHERE o.order_id IS NULL;
+
+-- Q8
+SELECT e.name, e.salary, d.department_name
+FROM employees AS e
+LEFT JOIN departments AS d
+ON e.department_id = d.department_id;
+
+-- Q9
+SELECT p.*, s.quantity_sold
+FROM products AS p
+LEFT JOIN sales AS s
+ON p.product_id = s.product_id
+WHERE s.sale_id IS NULL;
