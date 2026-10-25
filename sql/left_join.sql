@@ -136,6 +136,92 @@ ON p.product_id = s.product_id
 WHERE s.sale_id IS NULL;
 
 /*
+Questions 10–12: Deeper understanding
+the result
+Consider these tables:
+students
+id name
+1 Aman
+2 Riya
+3 Mohan
+marks
+student_id subject score
+1 SQL 80
+1 Python 90
+2 SQL 75
+What result will this query produce?
+SELECT s.name, m.subject, m.score
+FROM students AS s
+LEFT JOIN marks AS m
+ON s.id = m.student_id;
+Write the expected rows. Explain why Aman appears twice and why Mohan still appears in the
+result.
+Q11. Find the mistake
+A beginner wants to display every customer, including those who have not placed an order.
+They write:
+SELECT c.customer_name, o.amount
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.customer_id = o.customer_id
+WHERE o.amount > 1000;
+Explain why this query may fail to preserve customers who have no orders. What happens to
+rows where o.amount is NULL?
+Q12. Understand duplicate matches
+Suppose a customer has three matching orders, another customer has one order, and a third
+customer has no orders.
+Answer these questions:
+How many result rows will each customer contribute to a LEFT JOIN?
+Will the customer without orders still appear?
+Does LEFT JOIN automatically return only one row per customer?
+What happens when a single left-table record matches several right-table records?
+*/
+
+-- Q10
+/*
+Expected rows:
+Aman  | SQL    | 80
+Aman  | Python | 90
+Riya  | SQL    | 75
+Mohan | NULL   | NULL
+
+Aman appears twice because he has two matching records in
+the marks table.
+
+Mohan still appears because LEFT JOIN keeps all students,
+even if they have no matching record in the marks table.
+NULL means no matching marks information was found.
+*/
+
+-- Q11
+/*
+The WHERE condition filters out customers who have no
+orders.
+
+For customers without orders, o.amount is NULL.
+The condition NULL > 1000 evaluates to UNKNOWN, so
+those rows are excluded by WHERE.
+
+Although LEFT JOIN preserves every customer intially,
+the WHERE condition removes customers without matching
+orders.
+*/
+
+-- Q12
+/*
+1. Aman contributes 3 rows, Riya contributes 1 row,
+    and Mohan contributes 1 row.
+
+2. Mohan still appears because LEFT JOIN preserves
+    all records from the left table.
+
+3. LEFT JOIN does not automatically return one row
+    per customer.
+
+4. When one customer matches multiple orders, SQL
+    returns one row for each matching pair.
+*/
+
+/*
 Questions 13–14: Mixed problems
 Q13. Combining LEFT JOIN, conditions, and sorting
 A school has these tables:
