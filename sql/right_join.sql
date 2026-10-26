@@ -139,3 +139,37 @@ FROM employees AS e
 RIGHT JOIN departments AS d
 ON e.department_id = d.department_id
 WHERE e.department_id IS NULL;
+
+/*
+Questions 13–14: Mixed problems
+Q13. Combining RIGHT JOIN, filtering, and sorting
+A company has these tables:
+●​ employees(id, name, department_id, salary)
+●​ departments(department_id, department_name)
+Write a query that displays every department and its matching employees, including
+departments without employees. Display employee names and salaries where available, and
+sort the results alphabetically by department name.
+Q14. Joining three tables
+A school stores information in these tables:
+●​ students(student_id, name)
+●​ enrollments(student_id, course_id, marks)
+●​ courses(course_id, course_name)
+The school wants every course to appear in a report, along with the names of enrolled students
+and their marks when available. Courses without enrollments must remain in the report.
+Write a query joining the three tables to produce this report.
+*/
+
+-- Q13
+SELECT d.*, e.name, e.salary
+FROM employees AS e
+RIGHT JOIN departments AS d
+ON e.department_id = d.department_id
+ORDER BY d.department_name ASC;
+
+-- Q14
+SELECT c.*, s.name, e.marks
+FROM students AS s
+RIGHT JOIN enrollments AS e
+ON s.student_id = e.student_id
+RIGHT JOIN courses AS c
+ON e.course_id = c.course_id;
