@@ -60,3 +60,40 @@ departments table on the right side, it give us the all
 data from the right table even if the data does not have
 matching columns or values in the left table.
 */
+
+/*
+Questions 4–6: Core concepts
+Q4. Selecting specific columns
+You have two tables:
+●​ customers(customer_id, customer_name)
+●​ orders(order_id, customer_id, amount)
+Write a query that displays every order alongside the matching customer name. Every order
+must appear, even if its customer_id does not match a customer record.
+Q5. Using table aliases
+Using the employees and departments tables from Q2, write the query using short aliases
+for both tables. Display the department name, employee name, and employee ID.
+Q6. Filtering joined results
+Using the employees and departments tables from Q2, display every department but include
+employee details only when the employee's salary is greater than 50,000.
+Assume the employees table also contains a salary column. Departments without a
+qualifying employee must remain in the result.
+*/
+
+-- Q4
+SELECT o.*, c.customer_name
+FROM customers AS c
+RIGHT JOIN orders AS o
+ON c.customer_id = o.customer_id;
+
+-- Q5
+SELECT d.department_name, e.name, e.id
+FROM employees AS e
+RIGHT JOIN departments AS d
+ON e.department_id = d.department_id;
+
+-- Q6
+SELECT d.department_name, e.name, e.id
+FROM employees AS e
+RIGHT JOIN departments AS d
+ON e.department_id = d.department_id
+AND e.salary > 50000;
