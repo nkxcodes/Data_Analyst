@@ -97,3 +97,45 @@ FROM employees AS e
 RIGHT JOIN departments AS d
 ON e.department_id = d.department_id
 AND e.salary > 50000;
+
+/*
+Questions 7–9: Practical application
+Q7. Course enrollment audit
+A school has these tables:
+●​ courses(course_id, course_name)
+●​ enrollments(enrollment_id, course_id, student_id)
+The school wants a report showing every enrollment record alongside its course name. Even
+enrollment records with no matching course must appear.
+Write the query.
+Q8. Product sales report
+A shop has these tables:
+●​ products(product_id, product_name, price)
+●​ sales(sale_id, product_id, quantity_sold)
+The manager wants a report containing every sale, along with the product name and price when
+a matching product exists.
+Write the query.
+Q9. Finding unused departments
+A company wants to identify departments that currently have no employees.
+Using employees(id, name, department_id) and departments(department_id,
+department_name), write a query that returns only departments without matching employee
+records.
+*/
+
+-- Q7
+SELECT e.*, c.course_name
+FROM enrollments AS e
+RIGHT JOIN courses AS c
+ON e.course_id = c.course_id;
+
+-- Q8
+SELECT s.*, p.product_name, p.price
+FROM products AS p
+RIGHT JOIN sales AS s
+ON p.product_id = s.product_id;
+
+-- Q9
+SELECT d.*
+FROM employees AS e
+RIGHT JOIN departments AS d
+ON e.department_id = d.department_id
+WHERE e.department_id IS NULL;
