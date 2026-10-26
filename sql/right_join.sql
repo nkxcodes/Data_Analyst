@@ -173,3 +173,26 @@ RIGHT JOIN enrollments AS e
 ON s.student_id = e.student_id
 RIGHT JOIN courses AS c
 ON e.course_id = c.course_id;
+
+/*
+Question 15: Mastery challenge
+Q15. Complete Course Coverage Report
+A school wants to review all courses offered during the term.
+The database contains:
+●​ courses(course_id, course_name)
+●​ enrollments(enrollment_id, course_id, student_id, marks)
+●​ students(student_id, name)
+Create a report that includes every course, the enrolled student names, and their marks where
+available. Courses without enrollment records must still appear. Sort the report by course name
+alphabetically and then by student name.
+Write one SQL query to generate the report.
+*/
+
+-- Q15
+SELECT c.*, s.name, e.marks
+FROM students AS s
+RIGHT JOIN enrollments AS e
+ON s.student_id = e.student_id
+RIGHT JOIN courses AS c
+ON e.course_id = c.course_id
+ORDER BY c.course_name ASC, s.name ASC;
