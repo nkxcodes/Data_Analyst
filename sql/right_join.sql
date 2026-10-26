@@ -141,6 +141,95 @@ ON e.department_id = d.department_id
 WHERE e.department_id IS NULL;
 
 /*
+Questions 10–12: Deeper understanding
+Q10. the result
+Consider these tables:
+students
+id name
+1 Aman
+2 Riya
+marks
+student_id subject score
+1 SQL 80
+1 Python 90
+3 SQL 75
+What result will this query produce?
+SELECT s.name, m.subject, m.score
+FROM students AS s
+RIGHT JOIN marks AS m
+ON s.id = m.student_id;
+Write the expected rows. Explain why Aman appears twice and why the row with student_id
+= 3 is preserved.
+Q11. Find the mistake
+A beginner wants to display every department, including departments without employees. They
+write:
+SELECT d.department_name, e.name
+FROM employees AS e
+RIGHT JOIN departments AS d
+ON e.department_id = d.department_id
+WHERE e.salary > 50000;
+Assume employees contains a salary column.
+Explain why this query can remove departments that have no employees. What happens to the
+NULL salary values in the WHERE condition?
+Q12. Understand duplicate matches
+Suppose the right table contains three records for the same department, and the left table
+contains two employees belonging to that department.
+Answer these questions:
+How many joined rows will those two employees produce for that department?
+What happens to a right-table record that has no matching left-table record?
+Does RIGHT JOIN guarantee one output row per right-table record?
+Why can multiple matching records increase the number of result rows?
+*/
+
+-- Q10
+/*
+Output:
+Aman SQL 80
+Aman Python 90
+NULL SQL 75
+
+Explanation:
+
+1. Aman appears twice because two records in the marks table have
+    student_id = 1, matching Aman in the students table.
+
+2. The row with student_id = 3 is preserved because marks is the
+    right-hand table in the RIGHT JOIN.
+
+3. Since no student has id = 3, the student's name is NULL.
+
+4. Riya does not appear because she has no matching marks record.
+*/
+
+-- Q11
+/*
+The query can remove departments without employees because
+the WHERE condition filters the result after the RIGHT JOIN.
+
+For departments without employees, e.salary is NULL.
+The condition NULL > 50000 evaluates to UNKNOWN, not TRUE.
+WHERE keeps only rows where the condition is TRUE, so those
+departments are removed.
+
+The same condition also removes employees whose salary is
+50000 or less.
+
+To preserve every department while matching only employees
+earning more than 50000, the salary condition should be
+placed in the ON clause instead of the WHERE clause.
+*/
+
+-- Q12
+/*
+1. 2 employees x 3 matching records = 6 joined rows.
+2. Unmatched right-table rows are preserved, with NULL
+    values in the left-table columns.
+3. RIGHT JOIN does not guarantee one output row per
+    right-table record because mulitple matches create
+    multiple rows.
+*/
+
+/*
 Questions 13–14: Mixed problems
 Q13. Combining RIGHT JOIN, filtering, and sorting
 A company has these tables:
