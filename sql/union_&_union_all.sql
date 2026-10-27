@@ -112,3 +112,33 @@ SELECT sale_id, amount FROM store_sales;
 SELECT student_id, name FROM campus_a_students
 UNION
 SELECT student_id, name FROM campus_b_students;
+
+/*
+Questions 13–14: Mixed problems
+Q13. Combining data with conditions
+You have two tables:
+●​ employees_2025(id, name, salary)
+●​ employees_2026(id, name, salary)
+Write a query that combines employees earning more than 50,000 from both tables, removes
+duplicate result rows, and sorts the combined result by salary from highest to lowest.
+Q14. Combining different categories
+A school has two tables:
+●​ students(student_id, name)
+●​ teachers(teacher_id, name)
+The principal wants a single list containing the names of all students and teachers, along with a
+label identifying each person as either a student or a teacher.
+Write a query that combines both groups into one result with columns for name and role.
+*/
+
+-- Q13
+SELECT id, name, salary FROM employees_2025
+WHERE salary > 50000
+UNION
+SELECT id, name, salary FROM employees_2026
+WHERE salary > 50000
+ORDER BY salary DESC;
+
+-- Q14
+SELECT name, 'Student' AS role FROM students
+UNION ALL
+SELECT name, 'Teacher' AS role FROM teachers;
