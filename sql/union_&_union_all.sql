@@ -76,3 +76,39 @@ SELECT customer_name FROM north_customers
 UNION
 SELECT customer_name FROM south_customers
 ORDER BY customer_name ASC;
+
+/*
+Questions 7–9: Practical application
+Q7. Combining contact listsA company maintains two tables:
+●​ office_contacts(contact_name, phone)
+●​ event_contacts(contact_name, phone)
+Some people appear in both tables.
+The company wants one combined contact list without duplicate rows. Write the query.
+Q8. Combining transaction records
+A business stores transactions in two tables:
+●​ online_sales(sale_id, amount)
+●​ store_sales(sale_id, amount)
+The finance team wants to combine every transaction record from both sources, preserving
+repeated rows if they occur.
+Write the query that best fits this requirement.
+Q9. Creating a unified student list
+A school stores students from two campuses in campus_a_students and
+campus_b_students. Both tables contain student_id and name.
+The school wants one list of unique student IDs and names. Choose the appropriate set
+operator and write the query.
+*/
+
+-- Q7
+SELECT contact_name, phone FROM office_contacts
+UNION
+SELECT contact_name, phone FROM event_contacts;
+
+-- Q8
+SELECT sale_id, amount FROM online_sales
+UNION ALL
+SELECT sale_id, amount FROM store_sales;
+
+-- Q9
+SELECT student_id, name FROM campus_a_students
+UNION
+SELECT student_id, name FROM campus_b_students;
