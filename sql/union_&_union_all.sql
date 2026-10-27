@@ -142,3 +142,24 @@ ORDER BY salary DESC;
 SELECT name, 'Student' AS role FROM students
 UNION ALL
 SELECT name, 'Teacher' AS role FROM teachers;
+
+/*
+Question 15: Mastery challenge
+Q15. Unified Sales Report
+A company stores sales in three tables:
+●​ online_sales(sale_id, product_name, amount)
+●​ store_sales(sale_id, product_name, amount)
+●​ phone_sales(sale_id, product_name, amount)
+The manager wants a single report combining sales from all three sources. The report must
+preserve every transaction row, including repeated rows, and display the final results from
+highest amount to lowest.
+Write one SQL query to generate this report.
+*/
+
+-- Q15
+SELECT sale_id, product_name, amount FROM online_sales
+UNION ALL
+SELECT sale_id, product_name, amount FROM store_sales
+UNION ALL
+SELECT sale_id, product_name, amount FROM phone_sales
+ORDER BY amount DESC;
