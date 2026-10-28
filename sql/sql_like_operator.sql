@@ -74,3 +74,39 @@ Amit
 -- '%' matches zero or more characters, so both 'A' and
     longer names match.
 */
+
+/*
+Questions 7–9: Practical application
+Q7. Searching email addresses
+A table customers contains:
+customer_id, name, email
+Write a query to find customers whose email addresses end with @gmail.com.
+Q8. Finding products by name
+A table products contains:
+product_id, product_name, price
+A manager wants to find products whose names contain the word phone anywhere in the
+name, such as Smartphone, Phone Case, or Headphones.
+Write the query.
+Q9. Filtering employee records
+A table employees contains:
+employee_id, name, department, email
+The HR team wants employees whose names start with R but whose email addresses do not
+end with @company.com.
+Write a query that satisfies both conditions.
+*/
+
+-- Q7
+SELECT *
+FROM customers
+WHERE email LIKE '%@gmail.com';
+
+-- Q8
+SELECT *
+FROM products
+WHERE product_name LIKE '%phone%';
+
+-- Q9
+SELECT *
+FROM employees
+WHERE name LIKE 'R%'
+AND email NOT LIKE '%@company.com';
