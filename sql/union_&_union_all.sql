@@ -114,6 +114,72 @@ UNION
 SELECT student_id, name FROM campus_b_students;
 
 /*
+Questions 10–12: Deeper understanding
+Q10. the result
+Consider these queries:
+SELECT 10 AS number
+UNION
+SELECT 20
+UNION
+SELECT 10;
+SELECT 10 AS number
+UNION ALL
+SELECT 20
+UNION ALL
+SELECT 10;
+the output of each query and explain the difference in their results.
+Q11. Find the mistake
+A beginner writes:
+SELECT name, city
+FROM students
+UNION
+SELECT name
+FROM teachers;
+Assume students has columns name and city, while teachers has a name column.
+Identify the error and explain what must be changed before these results can be combined.
+Q12. Understand duplicate handling
+Suppose both tables contain these rows:
+table_a
+id name
+1 Aman
+2 Riya
+table_b
+id name
+1 Aman
+3 Mohan
+Answer these questions:
+●​ How many rows will UNION return?
+●​ How many rows will UNION ALL return?
+●​ If two rows have the same name but different IDs, will UNION consider them duplicates?
+●​ Does UNION remove duplicates based on one selected column or on the entire result
+row?
+*/
+
+-- Q10
+/*
+-- UNION removes duplicate rows from combined results.
+-- UNION ALL keeps all rows, including duplicates.
+*/
+
+-- Q11
+/*
+-- UNION requires both SELECT statements to return the
+same number of columns.
+-- Add NULL as a placeholder for the missing city column.
+*/
+
+-- Q12
+/*
+-- UNION removes duplicated rows based on all selected
+columns.
+-- UNION ALL preserves every row, including duplicates.
+-- Same name with different IDs is not duplicate when
+both columns are selected.
+-- If only name is selected, duplicate names are removed 
+by UNION.
+*/
+
+/*
 Questions 13–14: Mixed problems
 Q13. Combining data with conditions
 You have two tables:
