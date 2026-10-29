@@ -143,3 +143,28 @@ WHERE name LIKE '%an%'
     AND (city = 'Delhi' OR city = 'Mumbai')
     AND marks >= 60
 ORDER BY marks DESC;
+
+/*
+Q15. Mastery challenge — Customer search report
+A company stores customer information in a table named customers:
+●​ customer_id
+●​ customer_name
+●​ email
+●​ city
+●​ total_spent
+The sales manager needs a report of customers whose names begin with S or whose email
+addresses contain shop. Include only customers who live in Delhi or Mumbai and have spent
+more than ₹5,000.
+Display the customer ID, name, email, city, and total spent. Sort the results by total spent from
+highest to lowest.
+Write the complete query. Pay attention to how you combine the conditions so that the results
+follow all the manager's requirements.
+*/
+
+-- Q15
+SELECT customer_id, customer_name, email, city, total_spent
+FROM customers
+WHERE (customer_name LIKE 'S%' OR email LIKE '%shop%')
+    AND (city = 'Delhi' OR city = 'Mumbai')
+    AND total_spent > 5000
+ORDER BY total_spent DESC;
