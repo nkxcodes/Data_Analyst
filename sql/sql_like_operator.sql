@@ -110,3 +110,36 @@ SELECT *
 FROM employees
 WHERE name LIKE 'R%'
 AND email NOT LIKE '%@company.com';
+
+/*
+Questions 13–14: Mixed problems
+Q13. Combining LIKE, AND, and OR
+A table products contains:
+product_id, product_name, category, price
+Write a query to find products that either:
+●​ Have names starting with Sam and cost less than ₹1,000, or
+●​ Belong to the Accessories category and have names ending with Case.
+Make sure your conditions are grouped correctly.
+Q14. Pattern matching with multiple conditions
+A table students contains:
+id, name, city, marks
+Write a query to find students who:
+●​ Have names containing an anywhere,
+●​ Live in either Delhi or Mumbai,
+●​ Have marks of at least 60.
+Return only name, city, and marks, sorted by marks from highest to lowest.
+*/
+
+-- Q13
+SELECT *
+FROM products
+WHERE (product_name LIKE 'Sam%' AND price < 1000)
+    OR (category = 'Accessories' AND product_name LIKE '%Case')
+
+-- Q14
+SELECT name, city, marks
+FROM students
+WHERE name LIKE '%an%'
+    AND (city = 'Delhi' OR city = 'Mumbai')
+    AND marks >= 60
+ORDER BY marks DESC;
