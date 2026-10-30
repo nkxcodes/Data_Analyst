@@ -112,6 +112,77 @@ WHERE name LIKE 'R%'
 AND email NOT LIKE '%@company.com';
 
 /*
+Questions 10–12: Deeper understanding
+Q10. Find the mistake
+A beginner wants to find all students whose names start with A. They write:
+SELECT * FROM students
+WHERE name = 'A%';
+Explain what is wrong with this query and rewrite it correctly.
+Q11. Understanding _ versus %
+Suppose a table codes contains these values:
+code
+AB1
+AB12
+A12
+ABC
+AB
+For each pattern below, identify which values match and explain why.
+●​ LIKE 'AB_'
+●​ LIKE 'AB%'
+●​ LIKE '_B%'
+Q12. Case sensitivity and NULL values
+A table users contains:
+username
+Aman
+aman
+Riya
+NULL
+Answer the following:
+1.​ Will username LIKE 'A%' necessarily treat Aman and aman differently in MySQL?
+2.​ What determines whether a LIKE comparison is case-sensitive?
+3.​ Does the row containing NULL match username LIKE 'A%'? Why?
+*/
+
+-- Q10
+/*
+The = operator checks for an exact match and does not
+treat % as a wildcard.
+
+Correct query:
+*/
+SELECT *
+FROM students
+WHERE name LIKE 'A%';
+
+-- Q11
+/*
+1. 'AB_'
+    Matches AB1 and ABC because _ requires exactly one
+    character after AB.
+
+2. 'AB%'
+    Matches AB1, AB12, ABC, and AB because % allows zero
+    or more characters after AB.
+
+3. '_B%'
+    Matches AB1, AB12, ABC, and AB because _ matches 
+    exactly one first character, B must be second, and 
+    % matches zero or more characters after B.
+*/
+
+-- Q12
+/*
+1. LIKE may or may not distinguish Aman and aman. 
+    It depends on the column's collation.
+
+2. Collation determines whether text comparisons are 
+    case-sensitive or case-insensitive.
+
+3. NULL LIKE 'A%' returns UNKNOWN because NULL represents 
+    an unknown value. WHERE only keeps TRUE conditions.
+*/
+
+/*
 Questions 13–14: Mixed problems
 Q13. Combining LIKE, AND, and OR
 A table products contains:
