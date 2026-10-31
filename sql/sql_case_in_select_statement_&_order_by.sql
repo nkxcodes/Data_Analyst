@@ -42,3 +42,21 @@ CASE
     ELSE 'Fail'
 END result
 FROM students;
+
+-- Q2
+SELECT name, marks,
+CASE
+    WHEN marks >= 80 THEN 'Excellent'
+    WHEN marks >= 60 THEN 'Good'
+    WHEN marks >= 40 THEN 'Average'
+    ELSE 'Needs Improvement'
+END result
+FROM students;
+
+-- Q3
+/*
+-- CASE checks WHEN conditions from top to bottom.
+-- It returns the result of the first matching condition.
+-- Therefore, condition order matters.
+-- Place higher thresholds first to avoid incorrect matches.
+*/
