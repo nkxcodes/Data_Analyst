@@ -60,3 +60,66 @@ FROM students;
 -- Therefore, condition order matters.
 -- Place higher thresholds first to avoid incorrect matches.
 */
+
+/*
+Questions 4–6: Core concepts
+Q4. CASE with multiple conditions
+A table employees contains:
+employee_id, name, salary, department
+Write a query to classify employees based on salary:
+●​ Salary above ₹60,000 → High Salary
+●​ Salary between ₹30,000 and ₹60,000 (inclusive) → Medium Salary
+●​ Salary below ₹30,000 → Low Salary
+Display employee name, salary, and the salary category.
+Q5. Simple CASE expression
+A table orders contains:
+order_id, customer_name, status
+The status column contains values such as P, S, D, and C.
+Write a query to display:
+●​ P → Pending
+●​ S → Shipped
+●​ D → Delivered
+●​ C → Cancelled
+●​ Any other value → Unknown Status
+Use the simple form of the CASE expression.
+Q6. CASE in ORDER BY
+A table employees contains:
+employee_id, name, department, salary
+The company wants employees displayed in this custom department order:
+1.​ IT
+2.​ HR
+3.​ Sales
+4.​ Finance
+Write a query that sorts employees according to this order rather than alphabetical order.
+*/
+
+-- Q4
+SELECT name, salary,
+CASE
+    WHEN salary > 60000 THEN 'High Salary'
+    WHEN salary BETWEEN 30000 AND 60000 THEN 'Medium Salary'
+    WHEN salary < 30000 THEN 'Low Salary'
+END salary_category
+FROM employees;
+
+-- Q5
+SELECT order_id, customer_name, status,
+CASE status
+    WHEN 'P' THEN 'Pending'
+    WHEN 'S' THEN 'Shipped'
+    WHEN 'D' THEN 'Delivered'
+    WHEN 'C' THEN 'Cancelled'
+    ELSE 'Unknown Status'
+END AS order_status
+FROM orders;
+
+-- Q6
+SELECT employee_id, name, department, salary
+FROM employees
+ORDER BY
+    CASE
+        WHEN department = 'IT' THEN 1
+        WHEN department = 'HR' THEN 2
+        WHEN department = 'Sales' THEN 3
+        WHEN department = 'Finance' THEN 4
+    END;
