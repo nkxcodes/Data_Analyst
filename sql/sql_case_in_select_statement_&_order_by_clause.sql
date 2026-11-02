@@ -123,3 +123,65 @@ ORDER BY
         WHEN department = 'Sales' THEN 3
         WHEN department = 'Finance' THEN 4
     END;
+
+/*
+Questions 7–9: Practical application
+Q7. Creating a discount category
+An online store has a table products:
+product_id, product_name, price
+The manager wants to classify products:
+●​ Price below ₹500 → Budget
+●​ Price from ₹500 to ₹2,000 → Standard
+●​ Price above ₹2,000 → Premium
+Display product name, price, and the generated category.
+Q8. Prioritizing customer orders
+A table orders contains:
+order_id, customer_name, order_status, order_date
+The operations team wants to see orders in this priority:
+1.​ Pending
+2.​ Processing
+3.​ Shipped
+4.​ Delivered
+Within each status, the oldest order should appear first.
+Write a query to produce this sorting.
+Q9. Conditional sorting
+A table employees contains:
+employee_id, name, department, salary
+The HR team wants:
+●​ IT employees sorted by salary from highest to lowest.
+●​ All other employees sorted by name alphabetically.
+Write a query that achieves this using conditional sorting.
+*/
+
+-- Q7
+SELECT product_name, price, 
+CASE
+    WHEN price < 500 THEN 'Budget'
+    WHEN price BETWEEN 500 AND 2000 THEN 'Standard'
+    WHEN price > 2000 THEN 'Premium'
+END category
+FROM products;
+
+-- Q8
+SELECT order_id, customer_name, order_status, order_date
+FROM orders
+ORDER BY 
+    CASE
+        WHEN order_status = 'Pending' THEN 1
+        WHEN order_status = 'Processing' THEN 2
+        WHEN order_status = 'Shipped' THEN 3
+        WHEN order_status = 'Delivered' THEN 4
+    END,
+    order_date ASC;
+
+-- Q9
+SELECT employee_id, name, department, salary
+FROM employees
+ORDER BY
+    CASE
+        WHEN department = 'IT' THEN salary
+    END DESC,
+
+    CASE
+        WHEN department <> 'IT' THEN name
+    END ASC;
