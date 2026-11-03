@@ -185,3 +185,69 @@ ORDER BY
     CASE
         WHEN department <> 'IT' THEN name
     END ASC;
+
+/*
+Questions 10–12: Deeper understanding
+Q10. Find the mistake
+A beginner writes this query:
+None
+SELECT
+name,
+marks,
+CASE
+WHEN marks >= 40 THEN 'Pass'
+WHEN marks < 40 THEN 'Fail'
+ELSE 'Not Available'
+AS result
+FROM students;
+Identify the syntax mistake and rewrite the query correctly.
+Q11. Understanding CASE evaluation
+Consider this query:
+None
+SELECT
+name,
+marks,
+CASE
+WHEN marks >= 40 THEN 'Pass'
+WHEN marks >= 80 THEN 'Excellent'
+ELSE 'Fail'
+END AS result
+FROM students;
+Answer:
+1.​ What happens when marks are 90?
+2.​ Does SQL check every WHEN condition after finding a match?
+3.​ Why might the order of conditions change the result?
+4.​ How would you arrange the conditions to make Excellent and Pass both work
+correctly?
+Q12. CASE and NULL values
+A table employees contains:
+employee_id name salary
+1 Aman 50000
+2 Riya NULL
+3 Rahul 25000
+Consider this query:
+None
+SELECT
+name,
+salary,
+CASE
+WHEN salary >= 40000 THEN 'High'
+WHEN salary < 40000 THEN 'Low'
+ELSE 'Unknown'
+END AS salary_category
+FROM employees;
+Answer:
+1.​ What category will Aman receive?
+2.​ What category will Rahul receive?
+3.​ What category will Riya receive?
+4.​ Why does the ELSE branch handle the NULL salary?
+*/
+
+-- Q10
+SELECT name, marks, 
+CASE
+    WHEN marks >= 40 THEN 'Pass'
+    WHEN marks < 40 THEN 'Fail'
+    ELSE 'Not Available'
+END result
+FROM students;
