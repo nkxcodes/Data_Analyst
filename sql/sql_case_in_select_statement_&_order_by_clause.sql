@@ -251,3 +251,12 @@ CASE
     ELSE 'Not Available'
 END result
 FROM students;
+
+-- Q11
+/*
+CASE evaluates WHEN conditions from top to bottom.
+It returns the result of the first matching condition.
+Once a condition matches, remaining conditions are ignored.
+Place higher thresholds before lower thresholds to avoid 
+incorrect results.
+*/
