@@ -260,3 +260,11 @@ Once a condition matches, remaining conditions are ignored.
 Place higher thresholds before lower thresholds to avoid 
 incorrect results.
 */
+
+-- Q12
+/*
+NULL represents a missing or unknown value. 
+Comparisons with NULL return UNKNOWN, not TRUE or FALSE. 
+CASE executes ELSE when no WHEN condition is TRUE. 
+Therefore, NULL salary receives the category 'Unknown'.
+*/
