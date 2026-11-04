@@ -268,3 +268,55 @@ Comparisons with NULL return UNKNOWN, not TRUE or FALSE.
 CASE executes ELSE when no WHEN condition is TRUE. 
 Therefore, NULL salary receives the category 'Unknown'.
 */
+
+/*
+Questions 13–14: Mixed problems
+Q13. CASE with filtering and sorting
+A table students contains:
+student_id, name, marks, city
+Write a query that:
+●​ Includes only students from Delhi or Mumbai.
+●​ Creates a performance column:
+1.​ Marks 80 or above → Excellent
+2.​ Marks 60 or above → Good
+3.​ Marks 40 or above → Average
+4.​ Otherwise → Fail
+●​ Sorts students by performance in this order:
+1.​ Excellent
+2.​ Good
+3.​ Average
+4.​ Fail
+Within each performance category, sort by marks from highest to lowest.
+Q14. Combining CASE with aggregate functions
+A table orders contains:
+order_id, customer_id, order_amount, order_status
+The manager wants a report showing:
+Each customer_id
+Total number of orders
+Total order amount
+A customer category:
+○​ Total spending above ₹50,000 → High Value
+○​ Total spending above ₹20,000 → Medium Value
+○​ Otherwise → Low Value
+Write a query that groups the records by customer and creates the category based on each
+customer's total spending.
+*/
+
+-- Q13
+SELECT student_id, name, marks, city,
+CASE
+    WHEN marks >= 80 THEN 'Excellent'
+    WHEN marks >= 60 THEN 'Good'
+    WHEN marks >= 40 THEN 'Average'
+    ELSE 'Fail'
+END AS performance
+FROM students
+WHERE city IN ('Delhi', 'Mumbai')
+ORDER BY
+    CASE
+        WHEN marks >= 80 THEN 1
+        WHEN marks >= 60 THEN 2
+        WHEN marks >= 40 THEN 3
+        ELSE 4
+    END ASC,
+    marks DESC;
