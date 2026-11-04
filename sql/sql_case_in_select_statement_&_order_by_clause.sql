@@ -249,7 +249,7 @@ CASE
     WHEN marks >= 40 THEN 'Pass'
     WHEN marks < 40 THEN 'Fail'
     ELSE 'Not Available'
-END result
+END AS result
 FROM students;
 
 -- Q11
