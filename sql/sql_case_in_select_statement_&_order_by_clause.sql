@@ -320,3 +320,15 @@ ORDER BY
         ELSE 4
     END ASC,
     marks DESC;
+
+-- Q14 
+SELECT 
+    customer_id, 
+    COUNT(order_id) AS total_orders, 
+    SUM(order_amount) AS total_spending, 
+    CASE
+        WHEN SUM(order_amount) > 50000 THEN 'High Value' 
+        WHEN SUM(order_amount) > 20000 THEN 'Medium Value' 
+        ELSE AS customer_category 
+    FROM orders 
+    GROUP BY customer_id;
