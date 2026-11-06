@@ -332,3 +332,40 @@ SELECT
         ELSE AS customer_category 
     FROM orders 
     GROUP BY customer_id;
+
+/*
+Practice question:- 
+Q1. Student Performance and Sorting
+
+A table students contains:
+
+student_id, name, marks
+
+Write a query that:
+1. Displays student_id, name, and marks.
+2. Creates a performance column using CASE:
+   - Marks 80 or above → Excellent
+   - Marks 40 or above → Pass
+   - Otherwise → Fail
+3. Sorts students in this custom order:
+   - Excellent
+   - Pass
+   - Fail
+4. Within each category, sorts marks from highest to lowest.
+Your task: Write the complete SQL query.
+*/
+
+SELECT student_id, name, marks, 
+CASE 
+    WHEN marks >= 80 THEN 'Excellent' 
+    WHEN marks >= 40 THEN 'Pass' 
+    ELSE 'Fail' 
+END AS performance 
+FROM students 
+ORDER BY 
+    CASE
+        WHEN performance = 'Excellent' THEN 1 
+        WHEN performance = 'Pass' THEN 2 
+        WHEN performance = 'Fail' THEN 3 
+    END, 
+    marks DESC;
