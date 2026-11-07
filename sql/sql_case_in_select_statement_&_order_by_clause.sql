@@ -369,3 +369,25 @@ ORDER BY
         WHEN performance = 'Fail' THEN 3 
     END, 
     marks DESC;
+
+/*
+Practice question:- 
+
+Q2. Employee Salary Classification and Sorting
+A table employees contains:
+
+employee_id, name, department, salary
+
+Write a query that:
+1. Displays employee_id, name, department, and salary.
+2. Creates a salary_category column using CASE:
+   - Salary 60,000 or above → High
+   - Salary 30,000 or above → Medium
+   - Otherwise → Low
+3. Sorts employees in this custom order:
+   - High
+   - Medium
+   - Low
+4. Within each category, sorts salary from lowest to highest.
+Your task: Write the complete SQL query.
+*/
