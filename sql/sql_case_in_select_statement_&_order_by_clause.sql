@@ -391,3 +391,18 @@ Write a query that:
 4. Within each category, sorts salary from lowest to highest.
 Your task: Write the complete SQL query.
 */
+
+SELECT employee_id, name, department, salary, 
+CASE 
+    WHEN salary >= 60000 THEN 'High' 
+    WHEN salary >= 30000 THEN 'Medium' 
+    ELSE 'Low' 
+END AS salary_category 
+FROM employees
+ORDER BY 
+    CASE salary_category 
+        WHEN 'High' THEN 1 
+        WHEN 'Medium' THEN 2 
+        WHEN 'Low' THEN 3 
+    END, 
+    salary ASC;
