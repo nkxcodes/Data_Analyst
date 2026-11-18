@@ -445,4 +445,9 @@ CASE
     WHEN performance_score >= 75 THEN 'Good' 
     WHEN performance_score >= 50 THEN 'Average' 
     ELSE 'Needs Improvement' 
-END
+END, 
+CASE 
+    WHEN salary > 60000 THEN 'High Salary' 
+    ELSE 'Regular Salary' 
+END 
+FROM employees
